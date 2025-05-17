@@ -1,0 +1,12 @@
+2025-05-17 16:18:46,739 - INFO - Connected to database successfully.
+2025-05-17 16:18:46,871 - INFO - Query executed successfully.
+2025-05-17 16:18:46,884 - INFO - Results saved to average_billing_by_condition.csv
+2025-05-17 16:18:49,006 - INFO - Visualization saved to billing_by_condition.png
+2025-05-17 16:18:49,008 - INFO - Database connection closed.
+2025-05-17 16:18:49,009 - INFO - Script completed successfully.
+2025-05-17 16:19:20,308 - INFO - Connected to database successfully.
+2025-05-17 16:19:20,356 - INFO - Query executed successfully.
+2025-05-17 16:19:20,365 - INFO - Results saved to average_billing_by_condition.csv
+2025-05-17 16:19:20,746 - INFO - Visualization saved to billing_by_condition.png
+2025-05-17 16:19:20,747 - INFO - Database connection closed.
+2025-05-17 16:19:20,747 - INFO - Script completed successfully.

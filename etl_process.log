@@ -1,0 +1,30 @@
+2025-05-17 15:50:40,273 - INFO - Database connection established and table created.
+2025-05-17 15:50:40,276 - INFO - Initialized chunked reading of C:\Users\maruf\OneDrive\Desktop\SQL-Data-Analysis-Healthcare-Project\healthcare_dataset.csv with chunksize 10000
+2025-05-17 15:50:40,380 - INFO - Transforming chunk with 10000 records
+2025-05-17 15:50:40,391 - INFO - Removed 0 duplicate rows in chunk
+2025-05-17 15:50:40,399 - INFO - Standardized column names in chunk
+2025-05-17 15:50:40,403 - INFO - Validated/converted name to <class 'str'> in chunk
+2025-05-17 15:50:40,404 - INFO - Validated/converted age to Int32 in chunk
+2025-05-17 15:50:40,412 - INFO - Validated/converted gender to <class 'str'> in chunk
+2025-05-17 15:50:40,414 - INFO - Validated/converted blood_type to <class 'str'> in chunk
+2025-05-17 15:50:40,416 - INFO - Validated/converted medical_condition to <class 'str'> in chunk
+2025-05-17 15:50:40,422 - INFO - Validated/converted date_of_admission to datetime64[ns] in chunk
+2025-05-17 15:50:40,424 - INFO - Validated/converted doctor to <class 'str'> in chunk
+2025-05-17 15:50:40,426 - INFO - Validated/converted hospital to <class 'str'> in chunk
+2025-05-17 15:50:40,427 - INFO - Validated/converted insurance_provider to <class 'str'> in chunk
+2025-05-17 15:50:40,428 - INFO - Validated/converted billing_amount to <class 'float'> in chunk
+2025-05-17 15:50:40,428 - INFO - Validated/converted room_number to Int32 in chunk
+2025-05-17 15:50:40,430 - INFO - Validated/converted admission_type to <class 'str'> in chunk
+2025-05-17 15:50:40,439 - INFO - Validated/converted discharge_date to datetime64[ns] in chunk
+2025-05-17 15:50:40,441 - INFO - Validated/converted medication to <class 'str'> in chunk
+2025-05-17 15:50:40,443 - INFO - Validated/converted test_results to <class 'str'> in chunk
+2025-05-17 15:50:40,447 - INFO - Standardized gender values in chunk
+2025-05-17 15:50:40,449 - INFO - Standardized blood_type values in chunk
+2025-05-17 15:50:40,451 - INFO - Standardized medical_condition values in chunk
+2025-05-17 15:50:40,453 - INFO - Standardized test_results values in chunk
+2025-05-17 15:50:40,461 - INFO - Removed titles from name column in chunk
+2025-05-17 15:50:40,486 - INFO - Added unique record_id column to chunk
+2025-05-17 15:50:40,677 - INFO - Loaded 10000 records into SQLite database
+2025-05-17 15:50:40,677 - INFO - Processed and loaded chunk. Total records processed: 10000
+2025-05-17 15:50:40,677 - INFO - ETL pipeline completed successfully. Total records: 10000
+2025-05-17 15:50:40,678 - INFO - Database connection closed
