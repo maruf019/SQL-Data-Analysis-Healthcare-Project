@@ -28,3 +28,93 @@
 2025-05-17 15:50:40,677 - INFO - Processed and loaded chunk. Total records processed: 10000
 2025-05-17 15:50:40,677 - INFO - ETL pipeline completed successfully. Total records: 10000
 2025-05-17 15:50:40,678 - INFO - Database connection closed
+2025-05-19 20:25:27,685 - INFO - Database connection established and table created.
+2025-05-19 20:25:27,691 - INFO - Initialized chunked reading of C:\Users\maruf\OneDrive\Desktop\SQL-Data-Analysis-Healthcare-Project\healthcare_dataset.csv with chunksize 10000
+2025-05-19 20:25:27,801 - INFO - Transforming chunk with 10000 records
+2025-05-19 20:25:27,823 - INFO - Removed 0 duplicate rows in chunk
+2025-05-19 20:25:27,831 - INFO - Standardized column names in chunk
+2025-05-19 20:25:27,833 - INFO - Validated/converted name to <class 'str'> in chunk
+2025-05-19 20:25:27,837 - INFO - Validated/converted age to Int32 in chunk
+2025-05-19 20:25:27,839 - INFO - Validated/converted gender to <class 'str'> in chunk
+2025-05-19 20:25:27,840 - INFO - Validated/converted blood_type to <class 'str'> in chunk
+2025-05-19 20:25:27,842 - INFO - Validated/converted medical_condition to <class 'str'> in chunk
+2025-05-19 20:25:27,849 - INFO - Validated/converted date_of_admission to datetime64[ns] in chunk
+2025-05-19 20:25:27,851 - INFO - Validated/converted doctor to <class 'str'> in chunk
+2025-05-19 20:25:27,853 - INFO - Validated/converted hospital to <class 'str'> in chunk
+2025-05-19 20:25:27,855 - INFO - Validated/converted insurance_provider to <class 'str'> in chunk
+2025-05-19 20:25:27,855 - INFO - Validated/converted billing_amount to <class 'float'> in chunk
+2025-05-19 20:25:27,856 - INFO - Validated/converted room_number to Int32 in chunk
+2025-05-19 20:25:27,858 - INFO - Validated/converted admission_type to <class 'str'> in chunk
+2025-05-19 20:25:27,864 - INFO - Validated/converted discharge_date to datetime64[ns] in chunk
+2025-05-19 20:25:27,866 - INFO - Validated/converted medication to <class 'str'> in chunk
+2025-05-19 20:25:27,867 - INFO - Validated/converted test_results to <class 'str'> in chunk
+2025-05-19 20:25:27,870 - INFO - Standardized gender values in chunk
+2025-05-19 20:25:27,872 - INFO - Standardized blood_type values in chunk
+2025-05-19 20:25:27,874 - INFO - Standardized medical_condition values in chunk
+2025-05-19 20:25:27,876 - INFO - Standardized test_results values in chunk
+2025-05-19 20:25:27,883 - INFO - Removed titles from name column in chunk
+2025-05-19 20:25:27,911 - INFO - Added unique record_id column to chunk
+2025-05-19 20:25:28,675 - INFO - Loaded 10000 records into SQLite database
+2025-05-19 20:25:28,675 - INFO - Processed and loaded chunk. Total records processed: 10000
+2025-05-19 20:25:28,676 - INFO - ETL pipeline completed successfully. Total records: 10000
+2025-05-19 20:25:28,676 - INFO - Database connection closed
+2025-05-19 20:25:43,295 - INFO - Database connection established and table created.
+2025-05-19 20:25:43,299 - INFO - Initialized chunked reading of C:\Users\maruf\OneDrive\Desktop\SQL-Data-Analysis-Healthcare-Project\healthcare_dataset.csv with chunksize 10000
+2025-05-19 20:25:43,408 - INFO - Transforming chunk with 10000 records
+2025-05-19 20:25:43,420 - INFO - Removed 0 duplicate rows in chunk
+2025-05-19 20:25:43,428 - INFO - Standardized column names in chunk
+2025-05-19 20:25:43,430 - INFO - Validated/converted name to <class 'str'> in chunk
+2025-05-19 20:25:43,431 - INFO - Validated/converted age to Int32 in chunk
+2025-05-19 20:25:43,433 - INFO - Validated/converted gender to <class 'str'> in chunk
+2025-05-19 20:25:43,436 - INFO - Validated/converted blood_type to <class 'str'> in chunk
+2025-05-19 20:25:43,438 - INFO - Validated/converted medical_condition to <class 'str'> in chunk
+2025-05-19 20:25:43,444 - INFO - Validated/converted date_of_admission to datetime64[ns] in chunk
+2025-05-19 20:25:43,446 - INFO - Validated/converted doctor to <class 'str'> in chunk
+2025-05-19 20:25:43,448 - INFO - Validated/converted hospital to <class 'str'> in chunk
+2025-05-19 20:25:43,449 - INFO - Validated/converted insurance_provider to <class 'str'> in chunk
+2025-05-19 20:25:43,451 - INFO - Validated/converted billing_amount to <class 'float'> in chunk
+2025-05-19 20:25:43,452 - INFO - Validated/converted room_number to Int32 in chunk
+2025-05-19 20:25:43,454 - INFO - Validated/converted admission_type to <class 'str'> in chunk
+2025-05-19 20:25:43,460 - INFO - Validated/converted discharge_date to datetime64[ns] in chunk
+2025-05-19 20:25:43,462 - INFO - Validated/converted medication to <class 'str'> in chunk
+2025-05-19 20:25:43,464 - INFO - Validated/converted test_results to <class 'str'> in chunk
+2025-05-19 20:25:43,469 - INFO - Standardized gender values in chunk
+2025-05-19 20:25:43,472 - INFO - Standardized blood_type values in chunk
+2025-05-19 20:25:43,474 - INFO - Standardized medical_condition values in chunk
+2025-05-19 20:25:43,476 - INFO - Standardized test_results values in chunk
+2025-05-19 20:25:43,485 - INFO - Removed titles from name column in chunk
+2025-05-19 20:25:43,511 - INFO - Added unique record_id column to chunk
+2025-05-19 20:25:43,789 - INFO - Loaded 10000 records into SQLite database
+2025-05-19 20:25:43,789 - INFO - Processed and loaded chunk. Total records processed: 10000
+2025-05-19 20:25:43,789 - INFO - ETL pipeline completed successfully. Total records: 10000
+2025-05-19 20:25:43,790 - INFO - Database connection closed
+2025-05-19 20:26:04,250 - INFO - Database connection established and table created.
+2025-05-19 20:26:04,254 - INFO - Initialized chunked reading of C:\Users\maruf\OneDrive\Desktop\SQL-Data-Analysis-Healthcare-Project\healthcare_dataset.csv with chunksize 10000
+2025-05-19 20:26:04,360 - INFO - Transforming chunk with 10000 records
+2025-05-19 20:26:04,372 - INFO - Removed 0 duplicate rows in chunk
+2025-05-19 20:26:04,379 - INFO - Standardized column names in chunk
+2025-05-19 20:26:04,381 - INFO - Validated/converted name to <class 'str'> in chunk
+2025-05-19 20:26:04,382 - INFO - Validated/converted age to Int32 in chunk
+2025-05-19 20:26:04,384 - INFO - Validated/converted gender to <class 'str'> in chunk
+2025-05-19 20:26:04,386 - INFO - Validated/converted blood_type to <class 'str'> in chunk
+2025-05-19 20:26:04,388 - INFO - Validated/converted medical_condition to <class 'str'> in chunk
+2025-05-19 20:26:04,394 - INFO - Validated/converted date_of_admission to datetime64[ns] in chunk
+2025-05-19 20:26:04,396 - INFO - Validated/converted doctor to <class 'str'> in chunk
+2025-05-19 20:26:04,397 - INFO - Validated/converted hospital to <class 'str'> in chunk
+2025-05-19 20:26:04,399 - INFO - Validated/converted insurance_provider to <class 'str'> in chunk
+2025-05-19 20:26:04,399 - INFO - Validated/converted billing_amount to <class 'float'> in chunk
+2025-05-19 20:26:04,400 - INFO - Validated/converted room_number to Int32 in chunk
+2025-05-19 20:26:04,402 - INFO - Validated/converted admission_type to <class 'str'> in chunk
+2025-05-19 20:26:04,408 - INFO - Validated/converted discharge_date to datetime64[ns] in chunk
+2025-05-19 20:26:04,409 - INFO - Validated/converted medication to <class 'str'> in chunk
+2025-05-19 20:26:04,411 - INFO - Validated/converted test_results to <class 'str'> in chunk
+2025-05-19 20:26:04,414 - INFO - Standardized gender values in chunk
+2025-05-19 20:26:04,416 - INFO - Standardized blood_type values in chunk
+2025-05-19 20:26:04,417 - INFO - Standardized medical_condition values in chunk
+2025-05-19 20:26:04,419 - INFO - Standardized test_results values in chunk
+2025-05-19 20:26:04,427 - INFO - Removed titles from name column in chunk
+2025-05-19 20:26:04,452 - INFO - Added unique record_id column to chunk
+2025-05-19 20:26:04,732 - INFO - Loaded 10000 records into SQLite database
+2025-05-19 20:26:04,732 - INFO - Processed and loaded chunk. Total records processed: 10000
+2025-05-19 20:26:04,733 - INFO - ETL pipeline completed successfully. Total records: 10000
+2025-05-19 20:26:04,734 - INFO - Database connection closed

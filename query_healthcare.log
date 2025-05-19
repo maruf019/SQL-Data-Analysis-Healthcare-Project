@@ -10,3 +10,9 @@
 2025-05-17 16:19:20,746 - INFO - Visualization saved to billing_by_condition.png
 2025-05-17 16:19:20,747 - INFO - Database connection closed.
 2025-05-17 16:19:20,747 - INFO - Script completed successfully.
+2025-05-18 20:22:11,329 - INFO - Connected to database successfully.
+2025-05-18 20:22:11,488 - INFO - Query executed successfully.
+2025-05-18 20:22:11,501 - INFO - Results saved to average_billing_by_condition.csv
+2025-05-18 20:22:13,453 - INFO - Visualization saved to billing_by_condition.png
+2025-05-18 20:22:13,456 - INFO - Database connection closed.
+2025-05-18 20:22:13,456 - INFO - Script completed successfully.
