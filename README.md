@@ -22,7 +22,8 @@ CSV File: The healthcare_dataset.csv file, containing healthcare data with colum
 Installation
 
 Clone the Repository:
-git clone https://github.com/your-username/sql-data-analysis-healthcare-project.git
+git clone https://github.com/maruf019/SQL-Data-Analysis-Healthcare-Project.git
+
 cd sql-data-analysis-healthcare-project
 
 
