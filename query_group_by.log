@@ -1,0 +1,5 @@
+2025-05-19 21:28:28,281 - INFO - Connected to database successfully.
+2025-05-19 21:28:28,466 - INFO - GROUP BY query executed successfully.
+2025-05-19 21:28:28,474 - INFO - Results saved to group_by_results.csv
+2025-05-19 21:28:28,475 - INFO - Database connection closed.
+2025-05-19 21:28:28,475 - INFO - Script completed successfully.

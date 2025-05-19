@@ -1,0 +1,10 @@
+2025-05-19 21:28:33,658 - INFO - Connected to database successfully.
+2025-05-19 21:28:33,678 - INFO - INNER JOIN query executed successfully.
+2025-05-19 21:28:33,684 - INFO - Results saved to inner_join_results.csv
+2025-05-19 21:28:33,687 - INFO - Database connection closed.
+2025-05-19 21:28:33,687 - INFO - Script completed successfully.
+2025-05-19 21:30:24,668 - INFO - Connected to database successfully.
+2025-05-19 21:30:24,689 - INFO - INNER JOIN query executed successfully.
+2025-05-19 21:30:24,697 - INFO - Results saved to inner_join_results.csv
+2025-05-19 21:30:24,698 - INFO - Database connection closed.
+2025-05-19 21:30:24,701 - INFO - Script completed successfully.

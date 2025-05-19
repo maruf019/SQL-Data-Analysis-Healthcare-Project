@@ -118,3 +118,158 @@
 2025-05-19 20:26:04,732 - INFO - Processed and loaded chunk. Total records processed: 10000
 2025-05-19 20:26:04,733 - INFO - ETL pipeline completed successfully. Total records: 10000
 2025-05-19 20:26:04,734 - INFO - Database connection closed
+2025-05-19 21:28:07,677 - INFO - Initialized HealthcareETL with CSV: C:\Users\maruf\OneDrive\Desktop\SQL-Data-Analysis-Healthcare-Project\test_healthcare_dataset.csv, DB: healthcare.db, Chunksize: 10000
+2025-05-19 21:28:07,681 - INFO - Extracted CSV iterator for C:\Users\maruf\OneDrive\Desktop\SQL-Data-Analysis-Healthcare-Project\test_healthcare_dataset.csv
+2025-05-19 21:28:07,696 - INFO - Processing chunk 1
+2025-05-19 21:28:07,711 - INFO - Removed 0 duplicates
+2025-05-19 21:28:07,716 - INFO - Handled missing values
+2025-05-19 21:28:07,719 - INFO - Standardized formats
+2025-05-19 21:28:07,722 - INFO - Validated data
+2025-05-19 21:28:07,730 - INFO - Connected to database: healthcare.db
+2025-05-19 21:28:07,740 - ERROR - Load failed: table healthcare has no column named Blood Type
+2025-05-19 21:28:07,740 - ERROR - ETL pipeline failed: table healthcare has no column named Blood Type
+2025-05-19 21:28:07,740 - INFO - Database connection closed
+2025-05-19 21:29:57,866 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 21:29:57,866 - INFO - Test setup completed.
+2025-05-19 21:29:57,866 - INFO - Connected to database successfully.
+2025-05-19 21:29:57,873 - INFO - Doctors table created or already exists.
+2025-05-19 21:29:57,878 - INFO - Inserted 5 records into doctors table.
+2025-05-19 21:29:57,884 - INFO - Doctors table contents verified.
+2025-05-19 21:29:57,884 - INFO - Database connection closed.
+2025-05-19 21:29:57,886 - INFO - Doctors table setup test passed.
+2025-05-19 21:29:57,887 - INFO - Test database test_healthcare.db deleted.
+2025-05-19 21:29:57,887 - INFO - Test teardown completed.
+2025-05-19 21:29:57,887 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 21:29:57,887 - INFO - Test setup completed.
+2025-05-19 21:29:57,889 - INFO - Initialized HealthcareETL with CSV: empty_test.csv, DB: test_healthcare.db, Chunksize: 10000
+2025-05-19 21:29:57,911 - INFO - Extracted CSV iterator for empty_test.csv
+2025-05-19 21:29:57,912 - INFO - Processing chunk 1
+2025-05-19 21:29:57,912 - INFO - Removed 0 duplicates
+2025-05-19 21:29:57,915 - INFO - Handled missing values
+2025-05-19 21:29:57,916 - INFO - Standardized formats
+2025-05-19 21:29:57,921 - INFO - Validated data
+2025-05-19 21:29:57,922 - INFO - Connected to database: test_healthcare.db
+2025-05-19 21:29:57,931 - INFO - Loaded 0 records into healthcare table
+2025-05-19 21:29:57,932 - INFO - ETL pipeline completed successfully
+2025-05-19 21:29:57,932 - INFO - Database connection closed
+2025-05-19 21:29:57,935 - INFO - Empty CSV test passed.
+2025-05-19 21:29:57,935 - INFO - Test database test_healthcare.db deleted.
+2025-05-19 21:29:57,935 - INFO - Test teardown completed.
+2025-05-19 21:29:57,936 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 21:29:57,936 - INFO - Test setup completed.
+2025-05-19 21:29:57,936 - INFO - Extracted CSV iterator for test_healthcare_dataset.csv
+2025-05-19 21:29:57,944 - INFO - Processing chunk 1
+2025-05-19 21:29:57,946 - INFO - Removed 0 duplicates
+2025-05-19 21:29:57,952 - INFO - Handled missing values
+2025-05-19 21:29:57,955 - INFO - Standardized formats
+2025-05-19 21:29:57,957 - INFO - Validated data
+2025-05-19 21:29:57,958 - INFO - Connected to database: test_healthcare.db
+2025-05-19 21:29:57,971 - INFO - Loaded 2 records into healthcare table
+2025-05-19 21:29:57,975 - INFO - Processing chunk 2
+2025-05-19 21:29:57,977 - INFO - Removed 0 duplicates
+2025-05-19 21:29:57,979 - INFO - Handled missing values
+2025-05-19 21:29:57,980 - INFO - Standardized formats
+2025-05-19 21:29:57,981 - INFO - Validated data
+2025-05-19 21:29:57,988 - INFO - Loaded 2 records into healthcare table
+2025-05-19 21:29:57,990 - INFO - ETL pipeline completed successfully
+2025-05-19 21:29:57,990 - INFO - Database connection closed
+2025-05-19 21:29:57,990 - INFO - ETL pipeline executed successfully.
+2025-05-19 21:29:57,992 - ERROR - ETL test failed: Execution failed on sql 'SELECT SUM(CASE WHEN medical_condition IS NULL THEN 1 ELSE 0 END) AS nulls FROM healthcare': no such column: medical_condition
+2025-05-19 21:29:57,995 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 21:29:57,995 - INFO - Test setup completed.
+2025-05-19 21:29:57,995 - INFO - Extracted CSV iterator for test_healthcare_dataset.csv
+2025-05-19 21:29:57,997 - INFO - Processing chunk 1
+2025-05-19 21:29:57,999 - INFO - Removed 0 duplicates
+2025-05-19 21:29:58,002 - INFO - Handled missing values
+2025-05-19 21:29:58,003 - INFO - Standardized formats
+2025-05-19 21:29:58,004 - INFO - Validated data
+2025-05-19 21:29:58,005 - INFO - Connected to database: test_healthcare.db
+2025-05-19 21:29:58,010 - INFO - Loaded 2 records into healthcare table
+2025-05-19 21:29:58,012 - INFO - Processing chunk 2
+2025-05-19 21:29:58,013 - INFO - Removed 0 duplicates
+2025-05-19 21:29:58,015 - INFO - Handled missing values
+2025-05-19 21:29:58,016 - INFO - Standardized formats
+2025-05-19 21:29:58,017 - INFO - Validated data
+2025-05-19 21:29:58,023 - INFO - Loaded 2 records into healthcare table
+2025-05-19 21:29:58,023 - INFO - ETL pipeline completed successfully
+2025-05-19 21:29:58,023 - INFO - Database connection closed
+2025-05-19 21:29:58,024 - INFO - Connected to database successfully.
+2025-05-19 21:29:58,028 - INFO - Doctors table created or already exists.
+2025-05-19 21:29:58,033 - INFO - Inserted 5 records into doctors table.
+2025-05-19 21:29:58,035 - INFO - Doctors table contents verified.
+2025-05-19 21:29:58,036 - INFO - Database connection closed.
+2025-05-19 21:29:58,038 - INFO - Connected to database successfully.
+2025-05-19 21:29:58,040 - ERROR - Error: Execution failed on sql '
+        SELECT medical_condition, ROUND(AVG(billing_amount), 2) AS average_billing
+        FROM healthcare
+        GROUP BY medical_condition
+        ORDER BY average_billing DESC;
+        ': no such column: medical_condition
+2025-05-19 21:29:58,041 - INFO - Database connection closed.
+2025-05-19 21:29:58,041 - ERROR - GROUP BY test failed: Execution failed on sql '
+        SELECT medical_condition, ROUND(AVG(billing_amount), 2) AS average_billing
+        FROM healthcare
+        GROUP BY medical_condition
+        ORDER BY average_billing DESC;
+        ': no such column: medical_condition
+2025-05-19 21:29:58,044 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 21:29:58,044 - INFO - Test setup completed.
+2025-05-19 21:29:58,044 - INFO - Extracted CSV iterator for test_healthcare_dataset.csv
+2025-05-19 21:29:58,046 - INFO - Processing chunk 1
+2025-05-19 21:29:58,047 - INFO - Removed 0 duplicates
+2025-05-19 21:29:58,049 - INFO - Handled missing values
+2025-05-19 21:29:58,051 - INFO - Standardized formats
+2025-05-19 21:29:58,055 - INFO - Validated data
+2025-05-19 21:29:58,056 - INFO - Connected to database: test_healthcare.db
+2025-05-19 21:29:58,062 - INFO - Loaded 2 records into healthcare table
+2025-05-19 21:29:58,066 - INFO - Processing chunk 2
+2025-05-19 21:29:58,069 - INFO - Removed 0 duplicates
+2025-05-19 21:29:58,071 - INFO - Handled missing values
+2025-05-19 21:29:58,072 - INFO - Standardized formats
+2025-05-19 21:29:58,073 - INFO - Validated data
+2025-05-19 21:29:58,081 - INFO - Loaded 2 records into healthcare table
+2025-05-19 21:29:58,081 - INFO - ETL pipeline completed successfully
+2025-05-19 21:29:58,081 - INFO - Database connection closed
+2025-05-19 21:29:58,083 - INFO - Connected to database successfully.
+2025-05-19 21:29:58,083 - INFO - Doctors table created or already exists.
+2025-05-19 21:29:58,084 - INFO - Inserted 0 records into doctors table.
+2025-05-19 21:29:58,087 - INFO - Doctors table contents verified.
+2025-05-19 21:29:58,087 - INFO - Database connection closed.
+2025-05-19 21:29:58,088 - INFO - Connected to database successfully.
+2025-05-19 21:29:58,090 - ERROR - Error: Execution failed on sql '
+        SELECT h.medical_condition, h.doctor, d.specialty, COUNT(*) AS patient_count
+        FROM healthcare h
+        INNER JOIN doctors d ON h.doctor = d.doctor_name
+        GROUP BY h.medical_condition, h.doctor, d.specialty
+        ORDER BY patient_count DESC;
+        ': no such column: h.medical_condition
+2025-05-19 21:29:58,091 - INFO - Database connection closed.
+2025-05-19 21:29:58,091 - ERROR - INNER JOIN test failed: Execution failed on sql '
+        SELECT h.medical_condition, h.doctor, d.specialty, COUNT(*) AS patient_count
+        FROM healthcare h
+        INNER JOIN doctors d ON h.doctor = d.doctor_name
+        GROUP BY h.medical_condition, h.doctor, d.specialty
+        ORDER BY patient_count DESC;
+        ': no such column: h.medical_condition
+2025-05-19 21:30:17,553 - INFO - Initialized HealthcareETL with CSV: C:\Users\maruf\OneDrive\Desktop\SQL-Data-Analysis-Healthcare-Project\test_healthcare_dataset.csv, DB: healthcare.db, Chunksize: 10000
+2025-05-19 21:30:17,554 - INFO - Extracted CSV iterator for C:\Users\maruf\OneDrive\Desktop\SQL-Data-Analysis-Healthcare-Project\test_healthcare_dataset.csv
+2025-05-19 21:30:17,559 - INFO - Processing chunk 1
+2025-05-19 21:30:17,560 - INFO - Removed 0 duplicates
+2025-05-19 21:30:17,562 - INFO - Handled missing values
+2025-05-19 21:30:17,563 - INFO - Standardized formats
+2025-05-19 21:30:17,565 - INFO - Validated data
+2025-05-19 21:30:17,565 - INFO - Connected to database: healthcare.db
+2025-05-19 21:30:17,567 - ERROR - Load failed: table healthcare has no column named Blood Type
+2025-05-19 21:30:17,567 - ERROR - ETL pipeline failed: table healthcare has no column named Blood Type
+2025-05-19 21:30:17,567 - INFO - Database connection closed
+2025-05-19 21:30:34,237 - INFO - Initialized HealthcareETL with CSV: C:\Users\maruf\OneDrive\Desktop\SQL-Data-Analysis-Healthcare-Project\test_healthcare_dataset.csv, DB: healthcare.db, Chunksize: 10000
+2025-05-19 21:30:34,238 - INFO - Extracted CSV iterator for C:\Users\maruf\OneDrive\Desktop\SQL-Data-Analysis-Healthcare-Project\test_healthcare_dataset.csv
+2025-05-19 21:30:34,242 - INFO - Processing chunk 1
+2025-05-19 21:30:34,244 - INFO - Removed 0 duplicates
+2025-05-19 21:30:34,246 - INFO - Handled missing values
+2025-05-19 21:30:34,248 - INFO - Standardized formats
+2025-05-19 21:30:34,249 - INFO - Validated data
+2025-05-19 21:30:34,250 - INFO - Connected to database: healthcare.db
+2025-05-19 21:30:34,252 - ERROR - Load failed: table healthcare has no column named Blood Type
+2025-05-19 21:30:34,252 - ERROR - ETL pipeline failed: table healthcare has no column named Blood Type
+2025-05-19 21:30:34,252 - INFO - Database connection closed

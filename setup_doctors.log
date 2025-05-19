@@ -1,0 +1,6 @@
+2025-05-19 21:28:15,573 - INFO - Connected to database successfully.
+2025-05-19 21:28:15,580 - INFO - Doctors table created or already exists.
+2025-05-19 21:28:15,583 - INFO - Inserted 5 records into doctors table.
+2025-05-19 21:28:15,588 - INFO - Doctors table contents verified.
+2025-05-19 21:28:15,588 - INFO - Database connection closed.
+2025-05-19 21:28:15,588 - INFO - Setup script completed successfully.
