@@ -1,0 +1,18 @@
+2025-05-19 22:35:06,354 - INFO - Connected to database successfully.
+2025-05-19 22:35:06,366 - INFO - LEFT JOIN query executed successfully.
+2025-05-19 22:35:06,376 - INFO - Results saved to left_join_results.csv
+2025-05-19 22:35:06,376 - INFO - Database connection closed.
+2025-05-19 22:35:06,376 - INFO - Script completed successfully.
+2025-05-19 22:37:24,253 - INFO - Connected to database successfully.
+2025-05-19 22:37:24,254 - INFO - LEFT JOIN query executed successfully.
+2025-05-19 22:37:24,260 - INFO - Results saved to left_join_results.csv
+2025-05-19 22:37:24,260 - INFO - Database connection closed.
+2025-05-19 22:37:24,261 - INFO - Script completed successfully.
+2025-05-19 22:40:45,740 - INFO - Connected to database successfully.
+2025-05-19 22:40:45,751 - INFO - Inspected healthcare and doctors tables.
+2025-05-19 22:40:45,753 - INFO - LEFT JOIN query executed successfully.
+2025-05-19 22:40:45,760 - INFO - Results saved to left_join_results.csv
+2025-05-19 22:40:45,761 - INFO - Script completed successfully.
+2025-05-19 22:41:11,452 - ERROR - Database file not found: healthcare.db
+2025-05-19 22:41:11,452 - ERROR - Error: Database file not found: healthcare.db
+2025-05-19 22:41:11,452 - ERROR - Script failed: Database file not found: healthcare.db

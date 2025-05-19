@@ -1153,3 +1153,348 @@
 2025-05-19 21:59:27,152 - INFO - Empty CSV test passed.
 2025-05-19 21:59:27,152 - WARNING - Could not delete test_healthcare.db: File in use.
 2025-05-19 21:59:27,153 - INFO - Test teardown completed.
+2025-05-19 22:35:12,538 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 22:35:12,539 - INFO - Cleared existing test database: test_healthcare.db
+2025-05-19 22:35:12,540 - INFO - Dropped healthcare table to ensure clean state.
+2025-05-19 22:35:12,540 - INFO - Test setup completed.
+2025-05-19 22:35:12,545 - INFO - Healthcare table created or already exists.
+2025-05-19 22:35:12,548 - INFO - Extracted CSV iterator for test_healthcare_dataset.csv
+2025-05-19 22:35:12,561 - INFO - Processing chunk 1
+2025-05-19 22:35:12,562 - INFO - Renamed columns to match database schema
+2025-05-19 22:35:12,570 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:35:12,577 - INFO - Handled missing values
+2025-05-19 22:35:12,579 - INFO - Standardized formats
+2025-05-19 22:35:12,585 - INFO - Validated data
+2025-05-19 22:35:12,599 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:35:12,601 - INFO - Processing chunk 2
+2025-05-19 22:35:12,601 - INFO - Renamed columns to match database schema
+2025-05-19 22:35:12,602 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:35:12,605 - INFO - Handled missing values
+2025-05-19 22:35:12,606 - INFO - Standardized formats
+2025-05-19 22:35:12,608 - INFO - Validated data
+2025-05-19 22:35:12,625 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:35:12,626 - INFO - ETL pipeline completed successfully
+2025-05-19 22:35:12,627 - INFO - Connected to database successfully.
+2025-05-19 22:35:12,631 - INFO - Doctors table created or already exists.
+2025-05-19 22:35:12,635 - INFO - Inserted 5 records into doctors table.
+2025-05-19 22:35:12,640 - INFO - Doctors table contents verified.
+2025-05-19 22:35:12,642 - INFO - Doctors table setup test passed.
+2025-05-19 22:35:12,642 - WARNING - Could not delete test_healthcare.db: File in use.
+2025-05-19 22:35:12,642 - INFO - Test teardown completed.
+2025-05-19 22:35:12,643 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 22:35:12,643 - WARNING - Could not delete test_healthcare.db: File in use. Tests may fail.
+2025-05-19 22:35:12,646 - INFO - Dropped healthcare table to ensure clean state.
+2025-05-19 22:35:12,647 - INFO - Test setup completed.
+2025-05-19 22:35:12,647 - INFO - Initialized HealthcareETL with CSV: empty_test.csv, DB: test_healthcare.db, Chunksize: 10000
+2025-05-19 22:35:12,651 - INFO - Healthcare table created or already exists.
+2025-05-19 22:35:12,654 - INFO - Extracted CSV iterator for empty_test.csv
+2025-05-19 22:35:12,656 - INFO - Processing chunk 1
+2025-05-19 22:35:12,656 - INFO - Empty chunk received, skipping transformation.
+2025-05-19 22:35:12,656 - INFO - Empty chunk, skipping load.
+2025-05-19 22:35:12,656 - INFO - ETL pipeline completed successfully
+2025-05-19 22:35:12,659 - INFO - Empty CSV test passed.
+2025-05-19 22:35:12,659 - WARNING - Could not delete test_healthcare.db: File in use.
+2025-05-19 22:35:12,659 - INFO - Test teardown completed.
+2025-05-19 22:35:12,659 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 22:35:12,659 - WARNING - Could not delete test_healthcare.db: File in use. Tests may fail.
+2025-05-19 22:35:12,665 - INFO - Dropped healthcare table to ensure clean state.
+2025-05-19 22:35:12,665 - INFO - Test setup completed.
+2025-05-19 22:35:12,670 - INFO - Healthcare table created or already exists.
+2025-05-19 22:35:12,671 - INFO - Extracted CSV iterator for test_healthcare_dataset.csv
+2025-05-19 22:35:12,675 - INFO - Processing chunk 1
+2025-05-19 22:35:12,676 - INFO - Renamed columns to match database schema
+2025-05-19 22:35:12,676 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:35:12,678 - INFO - Handled missing values
+2025-05-19 22:35:12,679 - INFO - Standardized formats
+2025-05-19 22:35:12,681 - INFO - Validated data
+2025-05-19 22:35:12,692 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:35:12,694 - INFO - Processing chunk 2
+2025-05-19 22:35:12,694 - INFO - Renamed columns to match database schema
+2025-05-19 22:35:12,695 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:35:12,696 - INFO - Handled missing values
+2025-05-19 22:35:12,697 - INFO - Standardized formats
+2025-05-19 22:35:12,698 - INFO - Validated data
+2025-05-19 22:35:12,708 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:35:12,708 - INFO - ETL pipeline completed successfully
+2025-05-19 22:35:12,708 - INFO - ETL pipeline executed successfully.
+2025-05-19 22:35:12,712 - INFO - Verified 4 rows in healthcare table.
+2025-05-19 22:35:12,712 - INFO - Verified no null values in medical_condition.
+2025-05-19 22:35:12,713 - INFO - Verified schema: age=INTEGER, billing_amount=FLOAT
+2025-05-19 22:35:12,714 - INFO - Verified genders: ['Male', 'Female']
+2025-05-19 22:35:12,714 - INFO - ETL pipeline test passed.
+2025-05-19 22:35:12,714 - WARNING - Could not delete test_healthcare.db: File in use.
+2025-05-19 22:35:12,714 - INFO - Test teardown completed.
+2025-05-19 22:35:12,714 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 22:35:12,715 - WARNING - Could not delete test_healthcare.db: File in use. Tests may fail.
+2025-05-19 22:35:12,719 - INFO - Dropped healthcare table to ensure clean state.
+2025-05-19 22:35:12,719 - INFO - Test setup completed.
+2025-05-19 22:35:12,725 - INFO - Healthcare table created or already exists.
+2025-05-19 22:35:12,726 - INFO - Extracted CSV iterator for test_healthcare_dataset.csv
+2025-05-19 22:35:12,728 - INFO - Processing chunk 1
+2025-05-19 22:35:12,728 - INFO - Renamed columns to match database schema
+2025-05-19 22:35:12,729 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:35:12,731 - INFO - Handled missing values
+2025-05-19 22:35:12,732 - INFO - Standardized formats
+2025-05-19 22:35:12,733 - INFO - Validated data
+2025-05-19 22:35:12,744 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:35:12,746 - INFO - Processing chunk 2
+2025-05-19 22:35:12,747 - INFO - Renamed columns to match database schema
+2025-05-19 22:35:12,747 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:35:12,749 - INFO - Handled missing values
+2025-05-19 22:35:12,750 - INFO - Standardized formats
+2025-05-19 22:35:12,751 - INFO - Validated data
+2025-05-19 22:35:12,761 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:35:12,761 - INFO - ETL pipeline completed successfully
+2025-05-19 22:35:12,763 - INFO - Connected to database successfully.
+2025-05-19 22:35:12,763 - INFO - Doctors table created or already exists.
+2025-05-19 22:35:12,763 - INFO - Inserted 0 records into doctors table.
+2025-05-19 22:35:12,765 - INFO - Doctors table contents verified.
+2025-05-19 22:35:12,765 - INFO - Connected to database successfully.
+2025-05-19 22:35:12,766 - INFO - GROUP BY query executed successfully.
+2025-05-19 22:35:12,771 - INFO - Results saved to group_by_results.csv
+2025-05-19 22:35:12,775 - INFO - GROUP BY query test passed.
+2025-05-19 22:35:12,775 - WARNING - Could not delete test_healthcare.db: File in use.
+2025-05-19 22:35:12,775 - INFO - Test teardown completed.
+2025-05-19 22:35:12,776 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 22:35:12,777 - WARNING - Could not delete test_healthcare.db: File in use. Tests may fail.
+2025-05-19 22:35:12,780 - INFO - Dropped healthcare table to ensure clean state.
+2025-05-19 22:35:12,780 - INFO - Test setup completed.
+2025-05-19 22:35:12,785 - INFO - Healthcare table created or already exists.
+2025-05-19 22:35:12,785 - INFO - Extracted CSV iterator for test_healthcare_dataset.csv
+2025-05-19 22:35:12,788 - INFO - Processing chunk 1
+2025-05-19 22:35:12,788 - INFO - Renamed columns to match database schema
+2025-05-19 22:35:12,789 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:35:12,793 - INFO - Handled missing values
+2025-05-19 22:35:12,794 - INFO - Standardized formats
+2025-05-19 22:35:12,795 - INFO - Validated data
+2025-05-19 22:35:12,812 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:35:12,814 - INFO - Processing chunk 2
+2025-05-19 22:35:12,815 - INFO - Renamed columns to match database schema
+2025-05-19 22:35:12,815 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:35:12,818 - INFO - Handled missing values
+2025-05-19 22:35:12,819 - INFO - Standardized formats
+2025-05-19 22:35:12,821 - INFO - Validated data
+2025-05-19 22:35:12,832 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:35:12,832 - INFO - ETL pipeline completed successfully
+2025-05-19 22:35:12,833 - INFO - Connected to database successfully.
+2025-05-19 22:35:12,834 - INFO - Doctors table created or already exists.
+2025-05-19 22:35:12,834 - INFO - Inserted 0 records into doctors table.
+2025-05-19 22:35:12,837 - INFO - Doctors table contents verified.
+2025-05-19 22:35:12,840 - INFO - Connected to database successfully.
+2025-05-19 22:35:12,843 - INFO - Inspected healthcare and doctors tables.
+2025-05-19 22:35:12,844 - INFO - INNER JOIN query executed successfully.
+2025-05-19 22:35:12,846 - INFO - Results saved to inner_join_results.csv
+2025-05-19 22:35:12,847 - INFO - INNER JOIN query test passed.
+2025-05-19 22:35:12,847 - WARNING - Could not delete test_healthcare.db: File in use.
+2025-05-19 22:35:12,847 - INFO - Test teardown completed.
+2025-05-19 22:41:15,374 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 22:41:15,377 - INFO - Dropped healthcare table to ensure clean state.
+2025-05-19 22:41:15,377 - INFO - Test setup completed.
+2025-05-19 22:41:15,384 - INFO - Healthcare table created or already exists.
+2025-05-19 22:41:15,388 - INFO - Extracted CSV iterator for test_healthcare_dataset.csv
+2025-05-19 22:41:15,412 - INFO - Processing chunk 1
+2025-05-19 22:41:15,413 - INFO - Renamed columns to match database schema
+2025-05-19 22:41:15,430 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:41:15,437 - INFO - Handled missing values
+2025-05-19 22:41:15,441 - INFO - Standardized formats
+2025-05-19 22:41:15,450 - INFO - Validated data
+2025-05-19 22:41:15,466 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:41:15,474 - INFO - Processing chunk 2
+2025-05-19 22:41:15,474 - INFO - Renamed columns to match database schema
+2025-05-19 22:41:15,476 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:41:15,478 - INFO - Handled missing values
+2025-05-19 22:41:15,479 - INFO - Standardized formats
+2025-05-19 22:41:15,481 - INFO - Validated data
+2025-05-19 22:41:15,493 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:41:15,493 - INFO - ETL pipeline completed successfully
+2025-05-19 22:41:15,495 - INFO - Connected to database successfully.
+2025-05-19 22:41:15,499 - INFO - Doctors table created or already exists.
+2025-05-19 22:41:15,503 - INFO - Inserted 5 records into doctors table.
+2025-05-19 22:41:15,512 - INFO - Doctors table contents verified.
+2025-05-19 22:41:15,516 - INFO - Doctors table setup test passed.
+2025-05-19 22:41:15,517 - WARNING - Could not delete test_healthcare.db: File in use.
+2025-05-19 22:41:15,517 - INFO - Test teardown completed.
+2025-05-19 22:41:15,518 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 22:41:15,518 - WARNING - Could not delete test_healthcare.db: File in use. Tests may fail.
+2025-05-19 22:41:15,529 - INFO - Dropped healthcare table to ensure clean state.
+2025-05-19 22:41:15,529 - INFO - Test setup completed.
+2025-05-19 22:41:15,530 - INFO - Initialized HealthcareETL with CSV: empty_test.csv, DB: test_healthcare.db, Chunksize: 10000
+2025-05-19 22:41:15,541 - INFO - Healthcare table created or already exists.
+2025-05-19 22:41:15,546 - INFO - Extracted CSV iterator for empty_test.csv
+2025-05-19 22:41:15,549 - INFO - Processing chunk 1
+2025-05-19 22:41:15,549 - INFO - Empty chunk received, skipping transformation.
+2025-05-19 22:41:15,549 - INFO - Empty chunk, skipping load.
+2025-05-19 22:41:15,550 - INFO - ETL pipeline completed successfully
+2025-05-19 22:41:15,553 - INFO - Empty CSV test passed.
+2025-05-19 22:41:15,553 - WARNING - Could not delete test_healthcare.db: File in use.
+2025-05-19 22:41:15,553 - INFO - Test teardown completed.
+2025-05-19 22:41:15,554 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 22:41:15,554 - WARNING - Could not delete test_healthcare.db: File in use. Tests may fail.
+2025-05-19 22:41:15,562 - INFO - Dropped healthcare table to ensure clean state.
+2025-05-19 22:41:15,562 - INFO - Test setup completed.
+2025-05-19 22:41:15,569 - INFO - Healthcare table created or already exists.
+2025-05-19 22:41:15,570 - INFO - Extracted CSV iterator for test_healthcare_dataset.csv
+2025-05-19 22:41:15,574 - INFO - Processing chunk 1
+2025-05-19 22:41:15,575 - INFO - Renamed columns to match database schema
+2025-05-19 22:41:15,575 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:41:15,577 - INFO - Handled missing values
+2025-05-19 22:41:15,578 - INFO - Standardized formats
+2025-05-19 22:41:15,580 - INFO - Validated data
+2025-05-19 22:41:15,592 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:41:15,594 - INFO - Processing chunk 2
+2025-05-19 22:41:15,594 - INFO - Renamed columns to match database schema
+2025-05-19 22:41:15,595 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:41:15,597 - INFO - Handled missing values
+2025-05-19 22:41:15,599 - INFO - Standardized formats
+2025-05-19 22:41:15,600 - INFO - Validated data
+2025-05-19 22:41:15,612 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:41:15,612 - INFO - ETL pipeline completed successfully
+2025-05-19 22:41:15,613 - INFO - ETL pipeline executed successfully.
+2025-05-19 22:41:15,616 - INFO - Verified 4 rows in healthcare table.
+2025-05-19 22:41:15,617 - INFO - Verified no null values in medical_condition.
+2025-05-19 22:41:15,618 - INFO - Verified schema: age=INTEGER, billing_amount=FLOAT
+2025-05-19 22:41:15,618 - INFO - Verified genders: ['Male', 'Female']
+2025-05-19 22:41:15,619 - INFO - ETL pipeline test passed.
+2025-05-19 22:41:15,619 - WARNING - Could not delete test_healthcare.db: File in use.
+2025-05-19 22:41:15,619 - INFO - Test teardown completed.
+2025-05-19 22:41:15,619 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 22:41:15,619 - WARNING - Could not delete test_healthcare.db: File in use. Tests may fail.
+2025-05-19 22:41:15,624 - INFO - Dropped healthcare table to ensure clean state.
+2025-05-19 22:41:15,624 - INFO - Test setup completed.
+2025-05-19 22:41:15,629 - INFO - Healthcare table created or already exists.
+2025-05-19 22:41:15,630 - INFO - Extracted CSV iterator for test_healthcare_dataset.csv
+2025-05-19 22:41:15,633 - INFO - Processing chunk 1
+2025-05-19 22:41:15,633 - INFO - Renamed columns to match database schema
+2025-05-19 22:41:15,634 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:41:15,638 - INFO - Handled missing values
+2025-05-19 22:41:15,640 - INFO - Standardized formats
+2025-05-19 22:41:15,641 - INFO - Validated data
+2025-05-19 22:41:15,652 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:41:15,654 - INFO - Processing chunk 2
+2025-05-19 22:41:15,654 - INFO - Renamed columns to match database schema
+2025-05-19 22:41:15,655 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:41:15,657 - INFO - Handled missing values
+2025-05-19 22:41:15,658 - INFO - Standardized formats
+2025-05-19 22:41:15,660 - INFO - Validated data
+2025-05-19 22:41:15,672 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:41:15,672 - INFO - ETL pipeline completed successfully
+2025-05-19 22:41:15,674 - INFO - Connected to database successfully.
+2025-05-19 22:41:15,674 - INFO - Doctors table created or already exists.
+2025-05-19 22:41:15,675 - INFO - Inserted 0 records into doctors table.
+2025-05-19 22:41:15,677 - INFO - Doctors table contents verified.
+2025-05-19 22:41:15,677 - INFO - Connected to database successfully.
+2025-05-19 22:41:15,678 - INFO - GROUP BY query executed successfully.
+2025-05-19 22:41:15,684 - INFO - Results saved to group_by_results.csv
+2025-05-19 22:41:15,688 - INFO - GROUP BY query test passed.
+2025-05-19 22:41:15,688 - WARNING - Could not delete test_healthcare.db: File in use.
+2025-05-19 22:41:15,688 - INFO - Test teardown completed.
+2025-05-19 22:41:15,689 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 22:41:15,689 - WARNING - Could not delete test_healthcare.db: File in use. Tests may fail.
+2025-05-19 22:41:15,694 - INFO - Dropped healthcare table to ensure clean state.
+2025-05-19 22:41:15,694 - INFO - Test setup completed.
+2025-05-19 22:41:15,699 - INFO - Healthcare table created or already exists.
+2025-05-19 22:41:15,700 - INFO - Extracted CSV iterator for test_healthcare_dataset.csv
+2025-05-19 22:41:15,708 - INFO - Processing chunk 1
+2025-05-19 22:41:15,708 - INFO - Renamed columns to match database schema
+2025-05-19 22:41:15,709 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:41:15,711 - INFO - Handled missing values
+2025-05-19 22:41:15,712 - INFO - Standardized formats
+2025-05-19 22:41:15,714 - INFO - Validated data
+2025-05-19 22:41:15,732 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:41:15,735 - INFO - Processing chunk 2
+2025-05-19 22:41:15,737 - INFO - Renamed columns to match database schema
+2025-05-19 22:41:15,739 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:41:15,741 - INFO - Handled missing values
+2025-05-19 22:41:15,742 - INFO - Standardized formats
+2025-05-19 22:41:15,743 - INFO - Validated data
+2025-05-19 22:41:15,755 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:41:15,756 - INFO - ETL pipeline completed successfully
+2025-05-19 22:41:15,759 - INFO - Connected to database successfully.
+2025-05-19 22:41:15,760 - INFO - Doctors table created or already exists.
+2025-05-19 22:41:15,760 - INFO - Inserted 0 records into doctors table.
+2025-05-19 22:41:15,763 - INFO - Doctors table contents verified.
+2025-05-19 22:41:15,764 - INFO - Connected to database successfully.
+2025-05-19 22:41:15,773 - INFO - Inspected healthcare and doctors tables.
+2025-05-19 22:41:15,774 - INFO - INNER JOIN query executed successfully.
+2025-05-19 22:41:15,778 - INFO - Results saved to inner_join_results.csv
+2025-05-19 22:41:15,779 - INFO - INNER JOIN query test passed.
+2025-05-19 22:41:15,779 - WARNING - Could not delete test_healthcare.db: File in use.
+2025-05-19 22:41:15,779 - INFO - Test teardown completed.
+2025-05-19 22:41:15,780 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 22:41:15,780 - WARNING - Could not delete test_healthcare.db: File in use. Tests may fail.
+2025-05-19 22:41:15,787 - INFO - Dropped healthcare table to ensure clean state.
+2025-05-19 22:41:15,788 - INFO - Test setup completed.
+2025-05-19 22:41:15,794 - INFO - Healthcare table created or already exists.
+2025-05-19 22:41:15,795 - INFO - Extracted CSV iterator for test_healthcare_dataset.csv
+2025-05-19 22:41:15,798 - INFO - Processing chunk 1
+2025-05-19 22:41:15,799 - INFO - Renamed columns to match database schema
+2025-05-19 22:41:15,801 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:41:15,803 - INFO - Handled missing values
+2025-05-19 22:41:15,804 - INFO - Standardized formats
+2025-05-19 22:41:15,805 - INFO - Validated data
+2025-05-19 22:41:15,815 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:41:15,817 - INFO - Processing chunk 2
+2025-05-19 22:41:15,818 - INFO - Renamed columns to match database schema
+2025-05-19 22:41:15,820 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:41:15,823 - INFO - Handled missing values
+2025-05-19 22:41:15,824 - INFO - Standardized formats
+2025-05-19 22:41:15,825 - INFO - Validated data
+2025-05-19 22:41:15,834 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:41:15,835 - INFO - ETL pipeline completed successfully
+2025-05-19 22:41:15,836 - INFO - Connected to database successfully.
+2025-05-19 22:41:15,837 - INFO - Doctors table created or already exists.
+2025-05-19 22:41:15,837 - INFO - Inserted 0 records into doctors table.
+2025-05-19 22:41:15,839 - INFO - Doctors table contents verified.
+2025-05-19 22:41:15,839 - INFO - Connected to database successfully.
+2025-05-19 22:41:15,842 - INFO - Inspected healthcare and doctors tables.
+2025-05-19 22:41:15,843 - INFO - LEFT JOIN query executed successfully.
+2025-05-19 22:41:15,846 - INFO - Results saved to left_join_results.csv
+2025-05-19 22:41:15,847 - INFO - LEFT JOIN query test passed.
+2025-05-19 22:41:15,847 - WARNING - Could not delete test_healthcare.db: File in use.
+2025-05-19 22:41:15,847 - INFO - Test teardown completed.
+2025-05-19 22:41:25,038 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 22:41:25,038 - INFO - Cleared existing test database: test_healthcare.db
+2025-05-19 22:41:25,039 - INFO - Dropped healthcare table to ensure clean state.
+2025-05-19 22:41:25,039 - INFO - Test setup completed.
+2025-05-19 22:41:25,045 - INFO - Healthcare table created or already exists.
+2025-05-19 22:41:25,046 - INFO - Extracted CSV iterator for test_healthcare_dataset.csv
+2025-05-19 22:41:25,051 - INFO - Processing chunk 1
+2025-05-19 22:41:25,051 - INFO - Renamed columns to match database schema
+2025-05-19 22:41:25,052 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:41:25,056 - INFO - Handled missing values
+2025-05-19 22:41:25,059 - INFO - Standardized formats
+2025-05-19 22:41:25,069 - INFO - Validated data
+2025-05-19 22:41:25,084 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:41:25,086 - INFO - Processing chunk 2
+2025-05-19 22:41:25,087 - INFO - Renamed columns to match database schema
+2025-05-19 22:41:25,088 - INFO - Removed duplicates, 2 rows remain
+2025-05-19 22:41:25,092 - INFO - Handled missing values
+2025-05-19 22:41:25,099 - INFO - Standardized formats
+2025-05-19 22:41:25,101 - INFO - Validated data
+2025-05-19 22:41:25,126 - INFO - Loaded 2 records into healthcare table
+2025-05-19 22:41:25,126 - INFO - ETL pipeline completed successfully
+2025-05-19 22:41:25,129 - INFO - Connected to database successfully.
+2025-05-19 22:41:25,135 - INFO - Doctors table created or already exists.
+2025-05-19 22:41:25,139 - INFO - Inserted 5 records into doctors table.
+2025-05-19 22:41:25,144 - INFO - Doctors table contents verified.
+2025-05-19 22:41:25,146 - INFO - Connected to database successfully.
+2025-05-19 22:41:25,150 - INFO - Inspected healthcare and doctors tables.
+2025-05-19 22:41:25,152 - INFO - LEFT JOIN query executed successfully.
+2025-05-19 22:41:25,156 - INFO - Results saved to left_join_results.csv
+2025-05-19 22:41:25,157 - INFO - LEFT JOIN query test passed.
+2025-05-19 22:41:25,157 - WARNING - Could not delete test_healthcare.db: File in use.
+2025-05-19 22:41:25,157 - INFO - Test teardown completed.
+2025-05-19 22:41:50,060 - INFO - Initialized HealthcareETL with CSV: test_healthcare_dataset.csv, DB: test_healthcare.db, Chunksize: 2
+2025-05-19 22:41:50,061 - INFO - Cleared existing test database: test_healthcare.db
+2025-05-19 22:41:50,061 - INFO - Dropped healthcare table to ensure clean state.
+2025-05-19 22:41:50,061 - INFO - Test setup completed.
+2025-05-19 22:41:50,062 - INFO - Initialized HealthcareETL with CSV: empty_test.csv, DB: test_healthcare.db, Chunksize: 10000
+2025-05-19 22:41:50,067 - INFO - Healthcare table created or already exists.
+2025-05-19 22:41:50,069 - INFO - Extracted CSV iterator for empty_test.csv
+2025-05-19 22:41:50,072 - INFO - Processing chunk 1
+2025-05-19 22:41:50,072 - INFO - Empty chunk received, skipping transformation.
+2025-05-19 22:41:50,073 - INFO - Empty chunk, skipping load.
+2025-05-19 22:41:50,073 - INFO - ETL pipeline completed successfully
+2025-05-19 22:41:50,075 - INFO - Empty CSV test passed.
+2025-05-19 22:41:50,075 - WARNING - Could not delete test_healthcare.db: File in use.
+2025-05-19 22:41:50,075 - INFO - Test teardown completed.

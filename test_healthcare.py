@@ -8,6 +8,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from healthcare_etl_chunked_fixed import HealthcareETL
 from query_group_by import query_group_by
 from query_inner_join import query_inner_join
+from query_left_join import query_left_join
 from setup_doctors_table import setup_doctors_table
 
 # Configure logging
@@ -124,6 +125,20 @@ class TestHealthcareProject(unittest.TestCase):
             logging.error(f"INNER JOIN test failed: {e}")
             raise
 
+    def test_left_join_query(self):
+        """Test the LEFT JOIN query script."""
+        try:
+            self.etl.run()
+            setup_doctors_table(db_name=self.test_db)
+            df = query_left_join(db_name=self.test_db)
+            self.assertEqual(len(df), 4, "Expected 4 rows in LEFT JOIN results")
+            self.assertIn('Cardiology', df['specialty'].values, "Expected specialty not found")
+            self.assertTrue(os.path.exists('left_join_results.csv'), "LEFT JOIN CSV output not found")
+            logging.info("LEFT JOIN query test passed.")
+        except Exception as e:
+            logging.error(f"LEFT JOIN test failed: {e}")
+            raise
+
     def test_doctors_table_setup(self):
         """Test the doctors table setup script."""
         try:
@@ -156,4 +171,4 @@ class TestHealthcareProject(unittest.TestCase):
             raise
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main(verbosity=2)
