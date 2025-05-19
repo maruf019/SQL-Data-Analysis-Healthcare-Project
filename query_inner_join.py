@@ -17,30 +17,39 @@ def query_inner_join(db_name='healthcare.db'):
             logging.error(f"Database file not found: {db_name}")
             raise FileNotFoundError(f"Database file not found: {db_name}")
 
-        conn = sqlite3.connect(db_name)
-        logging.info("Connected to database successfully.")
-        print("Connected to database successfully.")
+        with sqlite3.connect(db_name) as conn:
+            logging.info("Connected to database successfully.")
+            print("Connected to database successfully.")
 
-        query = """
-        SELECT h.medical_condition, h.doctor, d.specialty, COUNT(*) AS patient_count
-        FROM healthcare h
-        INNER JOIN doctors d ON h.doctor = d.doctor_name
-        GROUP BY h.medical_condition, h.doctor, d.specialty
-        ORDER BY patient_count DESC;
-        """
+            # Debug: Inspect healthcare and doctors data
+            healthcare_doctors = pd.read_sql_query("SELECT DISTINCT doctor FROM healthcare", conn)
+            doctors_table = pd.read_sql_query("SELECT doctor_name FROM doctors", conn)
+            print("\nDoctors in healthcare table:")
+            print(healthcare_doctors.to_string(index=False))
+            print("\nDoctors in doctors table:")
+            print(doctors_table.to_string(index=False))
+            logging.info("Inspected healthcare and doctors tables.")
 
-        df = pd.read_sql_query(query, conn)
-        logging.info("INNER JOIN query executed successfully.")
+            query = """
+            SELECT h.medical_condition, h.doctor, d.specialty, COUNT(*) AS patient_count
+            FROM healthcare h
+            INNER JOIN doctors d ON h.doctor = d.doctor_name
+            GROUP BY h.medical_condition, h.doctor, d.specialty
+            ORDER BY patient_count DESC;
+            """
 
-        print("\nPatient Count by Medical Condition, Doctor, and Specialty (INNER JOIN):")
-        print(df.to_string(index=False))
+            df = pd.read_sql_query(query, conn)
+            logging.info("INNER JOIN query executed successfully.")
 
-        output_csv = 'inner_join_results.csv'
-        df.to_csv(output_csv, index=False)
-        logging.info(f"Results saved to {output_csv}")
-        print(f"\nResults saved to '{output_csv}'.")
+            print("\nPatient Count by Medical Condition, Doctor, and Specialty (INNER JOIN):")
+            print(df.to_string(index=False))
 
-        return df
+            output_csv = 'inner_join_results.csv'
+            df.to_csv(output_csv, index=False)
+            logging.info(f"Results saved to {output_csv}")
+            print(f"\nResults saved to '{output_csv}'.")
+
+            return df
 
     except sqlite3.Error as e:
         logging.error(f"Database error: {e}")
@@ -50,11 +59,6 @@ def query_inner_join(db_name='healthcare.db'):
         logging.error(f"Error: {e}")
         print(f"Error: {e}")
         raise
-    finally:
-        if 'conn' in locals():
-            conn.close()
-            logging.info("Database connection closed.")
-            print("Database connection closed.")
 
 if __name__ == "__main__":
     try:

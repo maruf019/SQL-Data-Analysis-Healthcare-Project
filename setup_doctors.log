@@ -4,3 +4,24 @@
 2025-05-19 21:28:15,588 - INFO - Doctors table contents verified.
 2025-05-19 21:28:15,588 - INFO - Database connection closed.
 2025-05-19 21:28:15,588 - INFO - Setup script completed successfully.
+2025-05-19 21:34:39,870 - INFO - Connected to database successfully.
+2025-05-19 21:34:39,877 - INFO - Doctors table created or already exists.
+2025-05-19 21:34:39,882 - INFO - Inserted 5 records into doctors table.
+2025-05-19 21:34:39,887 - INFO - Doctors table contents verified.
+2025-05-19 21:34:39,887 - INFO - Database connection closed.
+2025-05-19 21:34:39,887 - INFO - Setup script completed successfully.
+2025-05-19 21:48:21,106 - INFO - Connected to database successfully.
+2025-05-19 21:48:21,113 - INFO - Doctors table created or already exists.
+2025-05-19 21:48:21,117 - INFO - Inserted 5 records into doctors table.
+2025-05-19 21:48:21,120 - INFO - Doctors table contents verified.
+2025-05-19 21:48:21,120 - INFO - Setup script completed successfully.
+2025-05-19 21:51:08,846 - INFO - Connected to database successfully.
+2025-05-19 21:51:08,855 - INFO - Doctors table created or already exists.
+2025-05-19 21:51:08,858 - INFO - Inserted 5 records into doctors table.
+2025-05-19 21:51:08,862 - INFO - Doctors table contents verified.
+2025-05-19 21:51:08,863 - INFO - Setup script completed successfully.
+2025-05-19 21:58:36,951 - INFO - Connected to database successfully.
+2025-05-19 21:58:36,956 - INFO - Doctors table created or already exists.
+2025-05-19 21:58:36,962 - INFO - Inserted 5 records into doctors table.
+2025-05-19 21:58:36,966 - INFO - Doctors table contents verified.
+2025-05-19 21:58:36,966 - INFO - Setup script completed successfully.

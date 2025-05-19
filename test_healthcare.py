@@ -28,13 +28,34 @@ class TestHealthcareProject(unittest.TestCase):
             logging.error(f"Test CSV not found: {self.test_csv}")
             raise FileNotFoundError(f"Test CSV not found: {self.test_csv}")
         
+        # Clear database if it exists
+        if os.path.exists(self.test_db):
+            try:
+                os.remove(self.test_db)
+                logging.info(f"Cleared existing test database: {self.test_db}")
+            except PermissionError:
+                logging.warning(f"Could not delete {self.test_db}: File in use. Tests may fail.")
+                # Continue to allow tests to attempt running
+        
+        # Ensure healthcare table is empty
+        try:
+            with sqlite3.connect(self.test_db) as conn:
+                conn.execute("DROP TABLE IF EXISTS healthcare")
+                conn.commit()
+                logging.info("Dropped healthcare table to ensure clean state.")
+        except sqlite3.Error as e:
+            logging.error(f"Failed to drop healthcare table: {e}")
+        
         logging.info("Test setup completed.")
 
     def tearDown(self):
         """Clean up test environment."""
         if os.path.exists(self.test_db):
-            os.remove(self.test_db)
-            logging.info(f"Test database {self.test_db} deleted.")
+            try:
+                os.remove(self.test_db)
+                logging.info(f"Test database {self.test_db} deleted.")
+            except PermissionError:
+                logging.warning(f"Could not delete {self.test_db}: File in use.")
         logging.info("Test teardown completed.")
 
     def test_etl_pipeline(self):
@@ -43,22 +64,25 @@ class TestHealthcareProject(unittest.TestCase):
             self.etl.run()
             logging.info("ETL pipeline executed successfully.")
 
-            conn = sqlite3.connect(self.test_db)
-            df = pd.read_sql_query("SELECT COUNT(*) AS count FROM healthcare", conn)
-            self.assertEqual(df['count'][0], 4, "Incorrect number of rows in healthcare table")
+            with sqlite3.connect(self.test_db) as conn:
+                df = pd.read_sql_query("SELECT COUNT(*) AS count FROM healthcare", conn)
+                self.assertEqual(df['count'][0], 4, "Incorrect number of rows in healthcare table")
+                logging.info(f"Verified {df['count'][0]} rows in healthcare table.")
+                
+                null_counts = pd.read_sql_query("SELECT SUM(CASE WHEN medical_condition IS NULL THEN 1 ELSE 0 END) AS nulls FROM healthcare", conn)
+                self.assertEqual(null_counts['nulls'][0], 0, "Missing values found in medical_condition")
+                logging.info("Verified no null values in medical_condition.")
+                
+                schema = pd.read_sql_query("PRAGMA table_info(healthcare)", conn)
+                self.assertEqual(schema[schema['name'] == 'age']['type'].iloc[0], 'INTEGER', "Incorrect data type for age")
+                self.assertIn(schema[schema['name'] == 'billing_amount']['type'].iloc[0], ['FLOAT', 'REAL'], "Incorrect data type for billing_amount")
+                logging.info(f"Verified schema: age=INTEGER, billing_amount={schema[schema['name'] == 'billing_amount']['type'].iloc[0]}")
+                
+                genders = pd.read_sql_query("SELECT DISTINCT gender FROM healthcare", conn)
+                valid_genders = {'Male', 'Female', 'Unknown'}
+                self.assertTrue(set(genders['gender']).issubset(valid_genders), f"Invalid gender values found: {genders['gender'].tolist()}")
+                logging.info(f"Verified genders: {genders['gender'].tolist()}")
             
-            null_counts = pd.read_sql_query("SELECT SUM(CASE WHEN medical_condition IS NULL THEN 1 ELSE 0 END) AS nulls FROM healthcare", conn)
-            self.assertEqual(null_counts['nulls'][0], 0, "Missing values found in medical_condition")
-            
-            schema = pd.read_sql_query("PRAGMA table_info(healthcare)", conn)
-            self.assertEqual(schema[schema['name'] == 'age']['type'].iloc[0], 'INTEGER', "Incorrect data type for age")
-            self.assertEqual(schema[schema['name'] == 'billing_amount']['type'].iloc[0], 'FLOAT', "Incorrect data type for billing_amount")
-            
-            genders = pd.read_sql_query("SELECT DISTINCT gender FROM healthcare", conn)
-            valid_genders = {'Male', 'Female', 'Unknown'}
-            self.assertTrue(set(genders['gender']).issubset(valid_genders), "Invalid gender values found")
-            
-            conn.close()
             logging.info("ETL pipeline test passed.")
         except Exception as e:
             logging.error(f"ETL test failed: {e}")
@@ -92,7 +116,7 @@ class TestHealthcareProject(unittest.TestCase):
             self.etl.run()
             setup_doctors_table(db_name=self.test_db)
             df = query_inner_join(db_name=self.test_db)
-            self.assertGreaterEqual(len(df), 3, "Too few rows in INNER JOIN results")
+            self.assertEqual(len(df), 4, "Expected 4 rows in INNER JOIN results")
             self.assertIn('Cardiology', df['specialty'].values, "Expected specialty not found")
             self.assertTrue(os.path.exists('inner_join_results.csv'), "INNER JOIN CSV output not found")
             logging.info("INNER JOIN query test passed.")
@@ -103,11 +127,11 @@ class TestHealthcareProject(unittest.TestCase):
     def test_doctors_table_setup(self):
         """Test the doctors table setup script."""
         try:
+            self.etl.run()  # Create database
             setup_doctors_table(db_name=self.test_db)
-            conn = sqlite3.connect(self.test_db)
-            df = pd.read_sql_query("SELECT COUNT(*) AS count FROM doctors", conn)
-            self.assertEqual(df['count'][0], 5, "Incorrect number of rows in doctors table")
-            conn.close()
+            with sqlite3.connect(self.test_db) as conn:
+                df = pd.read_sql_query("SELECT COUNT(*) AS count FROM doctors", conn)
+                self.assertEqual(df['count'][0], 5, "Incorrect number of rows in doctors table")
             logging.info("Doctors table setup test passed.")
         except Exception as e:
             logging.error(f"Doctors table setup test failed: {e}")
@@ -122,10 +146,9 @@ class TestHealthcareProject(unittest.TestCase):
             self.test_csv = empty_csv
             self.etl = HealthcareETL(self.test_csv, db_name=self.test_db)
             self.etl.run()
-            conn = sqlite3.connect(self.test_db)
-            df = pd.read_sql_query("SELECT COUNT(*) AS count FROM healthcare", conn)
-            self.assertEqual(df['count'][0], 0, "Empty CSV should load 0 rows")
-            conn.close()
+            with sqlite3.connect(self.test_db) as conn:
+                df = pd.read_sql_query("SELECT COUNT(*) AS count FROM healthcare", conn)
+                self.assertEqual(df['count'][0], 0, "Empty CSV should load 0 rows")
             os.remove(empty_csv)
             logging.info("Empty CSV test passed.")
         except Exception as e:
