@@ -1,0 +1,7 @@
+2025-05-21 14:22:27,380 - ERROR - Database file not found: healthcare.db
+2025-05-21 14:22:27,380 - ERROR - Error: Database file not found: healthcare.db
+2025-05-21 14:22:27,381 - ERROR - Script failed: Database file not found: healthcare.db
+2025-05-21 14:27:48,543 - INFO - Connected to database successfully.
+2025-05-21 14:27:48,545 - INFO - Operators query executed successfully.
+2025-05-21 14:27:48,551 - INFO - Results saved to operators_results.csv
+2025-05-21 14:27:48,551 - INFO - Script completed successfully.

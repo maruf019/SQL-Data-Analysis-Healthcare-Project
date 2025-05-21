@@ -1,0 +1,24 @@
+2025-05-21 14:21:58,979 - ERROR - Database file not found: healthcare.db
+2025-05-21 14:21:58,980 - ERROR - Error: Database file not found: healthcare.db
+2025-05-21 14:21:58,980 - ERROR - Script failed: Database file not found: healthcare.db
+2025-05-21 14:27:42,870 - INFO - Connected to database successfully.
+2025-05-21 14:27:42,871 - ERROR - Error: Execution failed on sql '
+            SELECT name, medical_condition, billing_amount
+            FROM healthcare
+            WHERE billing_amount > ANY (
+                SELECT billing_amount
+                FROM healthcare
+                WHERE medical_condition = 'Arthritis'
+            )
+            ORDER BY billing_amount DESC;
+            ': near "SELECT": syntax error
+2025-05-21 14:27:42,872 - ERROR - Script failed: Execution failed on sql '
+            SELECT name, medical_condition, billing_amount
+            FROM healthcare
+            WHERE billing_amount > ANY (
+                SELECT billing_amount
+                FROM healthcare
+                WHERE medical_condition = 'Arthritis'
+            )
+            ORDER BY billing_amount DESC;
+            ': near "SELECT": syntax error

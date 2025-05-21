@@ -1,0 +1,11 @@
+2025-05-21 14:22:01,092 - ERROR - Database file not found: healthcare.db
+2025-05-21 14:22:01,092 - ERROR - Error: Database file not found: healthcare.db
+2025-05-21 14:22:01,092 - ERROR - Script failed: Database file not found: healthcare.db
+2025-05-21 14:27:45,358 - INFO - Connected to database successfully.
+2025-05-21 14:27:45,361 - INFO - CASE query executed successfully.
+2025-05-21 14:27:45,373 - INFO - Results saved to case_results.csv
+2025-05-21 14:27:45,374 - INFO - Script completed successfully.
+2025-05-21 14:32:11,174 - INFO - Connected to database successfully.
+2025-05-21 14:32:11,175 - INFO - CASE query executed successfully.
+2025-05-21 14:32:11,183 - INFO - Results saved to case_results.csv
+2025-05-21 14:32:11,183 - INFO - Script completed successfully.

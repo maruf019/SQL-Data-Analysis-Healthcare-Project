@@ -6,3 +6,18 @@
 2025-05-21 13:32:51,027 - INFO - UNION query executed.
 2025-05-21 13:32:51,034 - INFO - Results saved to union_results.csv
 2025-05-21 13:32:51,035 - INFO - Script completed successfully.
+2025-05-21 13:58:20,066 - INFO - Connected to database.
+2025-05-21 13:58:20,067 - INFO - UNION query executed.
+2025-05-21 13:58:20,074 - INFO - Results saved to union_results.csv
+2025-05-21 13:58:20,074 - INFO - Script completed successfully.
+2025-05-21 14:02:06,825 - INFO - Connected to database.
+2025-05-21 14:02:06,829 - INFO - UNION query executed.
+2025-05-21 14:02:06,837 - INFO - Results saved to union_results.csv
+2025-05-21 14:02:06,837 - INFO - Script completed successfully.
+2025-05-21 14:21:56,227 - ERROR - Database file not found: healthcare.db
+2025-05-21 14:21:56,230 - ERROR - Error: Database file not found: healthcare.db
+2025-05-21 14:21:56,230 - ERROR - Script failed: Database file not found: healthcare.db
+2025-05-21 14:27:39,983 - INFO - Connected to database successfully.
+2025-05-21 14:27:39,987 - INFO - UNION query executed successfully.
+2025-05-21 14:27:39,992 - INFO - Results saved to union_results.csv
+2025-05-21 14:27:39,992 - INFO - Script completed successfully.

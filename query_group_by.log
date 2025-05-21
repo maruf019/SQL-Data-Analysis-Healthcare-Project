@@ -32,3 +32,18 @@
 2025-05-21 13:32:43,591 - INFO - GROUP BY query executed successfully.
 2025-05-21 13:32:43,600 - INFO - Results saved to group_by_results.csv
 2025-05-21 13:32:43,601 - INFO - Script completed successfully.
+2025-05-21 13:58:16,836 - INFO - Connected to database successfully.
+2025-05-21 13:58:16,840 - INFO - GROUP BY query executed successfully.
+2025-05-21 13:58:16,846 - INFO - Results saved to group_by_results.csv
+2025-05-21 13:58:16,846 - INFO - Script completed successfully.
+2025-05-21 14:02:08,461 - INFO - Connected to database successfully.
+2025-05-21 14:02:08,465 - INFO - GROUP BY query executed successfully.
+2025-05-21 14:02:08,472 - INFO - Results saved to group_by_results.csv
+2025-05-21 14:02:08,472 - INFO - Script completed successfully.
+2025-05-21 14:21:56,861 - ERROR - Database file not found: healthcare.db
+2025-05-21 14:21:56,864 - ERROR - Error: Database file not found: healthcare.db
+2025-05-21 14:21:56,864 - ERROR - Script failed: Database file not found: healthcare.db
+2025-05-21 14:27:40,706 - INFO - Connected to database successfully.
+2025-05-21 14:27:40,710 - INFO - GROUP BY query executed successfully.
+2025-05-21 14:27:40,717 - INFO - Results saved to group_by_results.csv
+2025-05-21 14:27:40,718 - INFO - Script completed successfully.

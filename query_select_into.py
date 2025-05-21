@@ -5,41 +5,46 @@ import os
 
 # Configure logging
 logging.basicConfig(
-    filename='query_full_join.log',
+    filename='query_select_into.log',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-def query_full_join(db_name='healthcare.db'):
-    """Execute FULL JOIN query between healthcare and doctors tables."""
+def query_select_into(db_name='healthcare.db'):
+    """Execute SELECT INTO query to create a new table."""
     try:
         if not os.path.exists(db_name):
             logging.error(f"Database file not found: {db_name}")
             raise FileNotFoundError(f"Database file not found: {db_name}")
 
         with sqlite3.connect(db_name) as conn:
+            cursor = conn.cursor()
             logging.info("Connected to database successfully.")
             print("Connected to database successfully.")
 
+            # Drop table if exists
+            cursor.execute("DROP TABLE IF EXISTS high_billing_patients")
+            conn.commit()
+
+            # Create new table with SELECT INTO
             query = """
-            SELECT h.record_id, h.name, h.medical_condition, d.doctor_name, d.specialty
-            FROM healthcare h
-            LEFT JOIN doctors d ON h.doctor = d.doctor_name
-            UNION
-            SELECT NULL, NULL, NULL, d.doctor_name, d.specialty
-            FROM doctors d
-            LEFT JOIN healthcare h ON d.doctor_name = h.doctor
-            WHERE h.doctor IS NULL;
+            CREATE TABLE high_billing_patients AS
+            SELECT name, medical_condition, billing_amount
+            FROM healthcare
+            WHERE billing_amount > 20000;
             """
-            # SQLite does not support FULL JOIN; we use LEFT JOIN + UNION
 
-            df = pd.read_sql_query(query, conn)
-            logging.info("FULL JOIN query executed successfully.")
+            cursor.execute(query)
+            conn.commit()
+            logging.info("SELECT INTO query executed successfully.")
 
-            print("\nAll Patients and Doctors (FULL JOIN):")
+            # Retrieve results
+            df = pd.read_sql_query("SELECT * FROM high_billing_patients", conn)
+            
+            print("\nHigh Billing Patients (> 20000) (SELECT INTO):")
             print(df.to_string(index=False))
 
-            output_csv = 'full_join_results.csv'
+            output_csv = 'select_into_results.csv'
             df.to_csv(output_csv, index=False)
             logging.info(f"Results saved to {output_csv}")
             print(f"\nResults saved to '{output_csv}'.")
@@ -57,7 +62,7 @@ def query_full_join(db_name='healthcare.db'):
 
 if __name__ == "__main__":
     try:
-        query_full_join()
+        query_select_into()
         logging.info("Script completed successfully.")
     except Exception as e:
         logging.error(f"Script failed: {e}")

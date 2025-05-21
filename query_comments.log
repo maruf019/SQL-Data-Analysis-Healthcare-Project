@@ -1,0 +1,7 @@
+2025-05-21 14:22:03,840 - ERROR - Database file not found: healthcare.db
+2025-05-21 14:22:03,840 - ERROR - Error: Database file not found: healthcare.db
+2025-05-21 14:22:03,841 - ERROR - Script failed: Database file not found: healthcare.db
+2025-05-21 14:27:47,765 - INFO - Connected to database successfully.
+2025-05-21 14:27:47,766 - INFO - Comments query executed successfully.
+2025-05-21 14:27:47,774 - INFO - Results saved to comments_results.csv
+2025-05-21 14:27:47,774 - INFO - Script completed successfully.

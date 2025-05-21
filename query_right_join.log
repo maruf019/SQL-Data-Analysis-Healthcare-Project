@@ -5,3 +5,14 @@
 2025-05-21 13:11:25,516 - INFO - RIGHT JOIN query executed.
 2025-05-21 13:11:25,524 - INFO - Results saved to right_join_results.csv
 2025-05-21 13:11:25,525 - INFO - Script completed successfully.
+2025-05-21 14:02:04,510 - INFO - Connected to database.
+2025-05-21 14:02:04,512 - INFO - RIGHT JOIN query executed.
+2025-05-21 14:02:04,520 - INFO - Results saved to right_join_results.csv
+2025-05-21 14:02:04,521 - INFO - Script completed successfully.
+2025-05-21 14:21:53,808 - ERROR - Database file not found: healthcare.db
+2025-05-21 14:21:53,809 - ERROR - Error: Database file not found: healthcare.db
+2025-05-21 14:21:53,810 - ERROR - Script failed: Database file not found: healthcare.db
+2025-05-21 14:27:37,649 - INFO - Connected to database successfully.
+2025-05-21 14:27:37,653 - INFO - RIGHT JOIN query executed successfully.
+2025-05-21 14:27:37,662 - INFO - Results saved to right_join_results.csv
+2025-05-21 14:27:37,662 - INFO - Script completed successfully.

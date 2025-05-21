@@ -3,6 +3,7 @@ import pandas as pd
 import logging
 import os
 
+# Configure logging
 logging.basicConfig(
     filename='query_right_join.log',
     level=logging.INFO,
@@ -10,27 +11,29 @@ logging.basicConfig(
 )
 
 def query_right_join(db_name='healthcare.db'):
+    """Execute RIGHT JOIN query between doctors and healthcare tables."""
     try:
         if not os.path.exists(db_name):
             logging.error(f"Database file not found: {db_name}")
             raise FileNotFoundError(f"Database file not found: {db_name}")
 
         with sqlite3.connect(db_name) as conn:
-            logging.info("Connected to database.")
-            print("Connected to database.")
+            logging.info("Connected to database successfully.")
+            print("Connected to database successfully.")
 
             query = """
-            SELECT d.doctor_name, d.specialty, COUNT(h.record_id) AS patient_count
+            SELECT d.doctor_name, d.specialty, h.medical_condition, COUNT(h.record_id) AS patient_count
             FROM doctors d
             LEFT JOIN healthcare h ON d.doctor_name = h.doctor
-            GROUP BY d.doctor_name, d.specialty
-            ORDER BY patient_count DESC;
+            GROUP BY d.doctor_name, d.specialty, h.medical_condition
+            ORDER BY d.doctor_name;
             """
+            # Note: SQLite does not support RIGHT JOIN directly; we use LEFT JOIN with tables reversed
 
             df = pd.read_sql_query(query, conn)
-            logging.info("RIGHT JOIN query executed.")
+            logging.info("RIGHT JOIN query executed successfully.")
 
-            print("\nPatient Count by Doctor (RIGHT JOIN):")
+            print("\nDoctors with Patient Counts and Medical Conditions (RIGHT JOIN):")
             print(df.to_string(index=False))
 
             output_csv = 'right_join_results.csv'

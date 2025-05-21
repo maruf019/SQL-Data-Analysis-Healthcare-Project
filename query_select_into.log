@@ -1,0 +1,7 @@
+2025-05-21 14:21:59,681 - ERROR - Database file not found: healthcare.db
+2025-05-21 14:21:59,682 - ERROR - Error: Database file not found: healthcare.db
+2025-05-21 14:21:59,682 - ERROR - Script failed: Database file not found: healthcare.db
+2025-05-21 14:27:43,604 - INFO - Connected to database successfully.
+2025-05-21 14:27:43,611 - INFO - SELECT INTO query executed successfully.
+2025-05-21 14:27:43,619 - INFO - Results saved to select_into_results.csv
+2025-05-21 14:27:43,619 - INFO - Script completed successfully.

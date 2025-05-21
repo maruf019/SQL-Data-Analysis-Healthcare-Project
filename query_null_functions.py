@@ -5,13 +5,13 @@ import os
 
 # Configure logging
 logging.basicConfig(
-    filename='query_full_join.log',
+    filename='query_null_functions.log',
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s'
 )
 
-def query_full_join(db_name='healthcare.db'):
-    """Execute FULL JOIN query between healthcare and doctors tables."""
+def query_null_functions(db_name='healthcare.db'):
+    """Execute NULL functions query on healthcare table."""
     try:
         if not os.path.exists(db_name):
             logging.error(f"Database file not found: {db_name}")
@@ -22,24 +22,18 @@ def query_full_join(db_name='healthcare.db'):
             print("Connected to database successfully.")
 
             query = """
-            SELECT h.record_id, h.name, h.medical_condition, d.doctor_name, d.specialty
-            FROM healthcare h
-            LEFT JOIN doctors d ON h.doctor = d.doctor_name
-            UNION
-            SELECT NULL, NULL, NULL, d.doctor_name, d.specialty
-            FROM doctors d
-            LEFT JOIN healthcare h ON d.doctor_name = h.doctor
-            WHERE h.doctor IS NULL;
+            SELECT name, COALESCE(medical_condition, 'Unknown') AS medical_condition
+            FROM healthcare
+            ORDER BY name;
             """
-            # SQLite does not support FULL JOIN; we use LEFT JOIN + UNION
 
             df = pd.read_sql_query(query, conn)
-            logging.info("FULL JOIN query executed successfully.")
+            logging.info("NULL functions query executed successfully.")
 
-            print("\nAll Patients and Doctors (FULL JOIN):")
+            print("\nPatients with Handled Null Medical Conditions (NULL FUNCTIONS):")
             print(df.to_string(index=False))
 
-            output_csv = 'full_join_results.csv'
+            output_csv = 'null_functions_results.csv'
             df.to_csv(output_csv, index=False)
             logging.info(f"Results saved to {output_csv}")
             print(f"\nResults saved to '{output_csv}'.")
@@ -57,7 +51,7 @@ def query_full_join(db_name='healthcare.db'):
 
 if __name__ == "__main__":
     try:
-        query_full_join()
+        query_null_functions()
         logging.info("Script completed successfully.")
     except Exception as e:
         logging.error(f"Script failed: {e}")

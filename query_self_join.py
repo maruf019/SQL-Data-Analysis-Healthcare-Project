@@ -3,6 +3,7 @@ import pandas as pd
 import logging
 import os
 
+# Configure logging
 logging.basicConfig(
     filename='query_self_join.log',
     level=logging.INFO,
@@ -10,24 +11,25 @@ logging.basicConfig(
 )
 
 def query_self_join(db_name='healthcare.db'):
+    """Execute SELF JOIN query on healthcare table."""
     try:
         if not os.path.exists(db_name):
             logging.error(f"Database file not found: {db_name}")
             raise FileNotFoundError(f"Database file not found: {db_name}")
 
         with sqlite3.connect(db_name) as conn:
-            logging.info("Connected to database.")
-            print("Connected to database.")
+            logging.info("Connected to database successfully.")
+            print("Connected to database successfully.")
 
             query = """
-            SELECT a.medical_condition, a.name AS patient1, b.name AS patient2
-            FROM healthcare a
-            JOIN healthcare b ON a.medical_condition = b.medical_condition AND a.record_id < b.record_id
-            ORDER BY a.medical_condition;
+            SELECT h1.name AS patient1, h2.name AS patient2, h1.medical_condition
+            FROM healthcare h1
+            INNER JOIN healthcare h2 ON h1.medical_condition = h2.medical_condition
+            WHERE h1.record_id < h2.record_id;
             """
 
             df = pd.read_sql_query(query, conn)
-            logging.info("SELF JOIN query executed.")
+            logging.info("SELF JOIN query executed successfully.")
 
             print("\nPatients with Same Medical Condition (SELF JOIN):")
             print(df.to_string(index=False))

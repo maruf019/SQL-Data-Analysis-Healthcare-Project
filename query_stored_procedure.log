@@ -1,0 +1,7 @@
+2025-05-21 14:22:02,770 - ERROR - Database file not found: healthcare.db
+2025-05-21 14:22:02,771 - ERROR - Error: Database file not found: healthcare.db
+2025-05-21 14:22:02,772 - ERROR - Script failed: Database file not found: healthcare.db
+2025-05-21 14:27:46,988 - INFO - Connected to database successfully.
+2025-05-21 14:27:46,990 - INFO - Stored procedure query executed successfully.
+2025-05-21 14:27:46,998 - INFO - Results saved to stored_procedure_results.csv
+2025-05-21 14:27:46,998 - INFO - Script completed successfully.

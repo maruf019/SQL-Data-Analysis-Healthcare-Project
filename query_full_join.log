@@ -2,3 +2,18 @@
 2025-05-21 13:13:03,277 - INFO - FULL JOIN query executed.
 2025-05-21 13:13:03,295 - INFO - Results saved to full_join_results.csv
 2025-05-21 13:13:03,295 - INFO - Script completed successfully.
+2025-05-21 13:56:06,089 - INFO - Connected to database.
+2025-05-21 13:56:06,092 - INFO - FULL JOIN query executed.
+2025-05-21 13:56:06,100 - INFO - Results saved to full_join_results.csv
+2025-05-21 13:56:06,101 - INFO - Script completed successfully.
+2025-05-21 14:02:05,204 - INFO - Connected to database.
+2025-05-21 14:02:05,206 - INFO - FULL JOIN query executed.
+2025-05-21 14:02:05,212 - INFO - Results saved to full_join_results.csv
+2025-05-21 14:02:05,212 - INFO - Script completed successfully.
+2025-05-21 14:21:54,667 - ERROR - Database file not found: healthcare.db
+2025-05-21 14:21:54,669 - ERROR - Error: Database file not found: healthcare.db
+2025-05-21 14:21:54,670 - ERROR - Script failed: Database file not found: healthcare.db
+2025-05-21 14:27:38,455 - INFO - Connected to database successfully.
+2025-05-21 14:27:38,458 - INFO - FULL JOIN query executed successfully.
+2025-05-21 14:27:38,465 - INFO - Results saved to full_join_results.csv
+2025-05-21 14:27:38,466 - INFO - Script completed successfully.

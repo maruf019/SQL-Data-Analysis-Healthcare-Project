@@ -6,10 +6,23 @@ import sys
 import logging
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from healthcare_etl_chunked_fixed import HealthcareETL
+from setup_doctors_table import setup_doctors_table
 from query_group_by import query_group_by
 from query_inner_join import query_inner_join
-from query_left_join import query_left_join
-from setup_doctors_table import setup_doctors_table
+from query_right_join import query_right_join
+from query_full_join import query_full_join
+from query_self_join import query_self_join
+from query_union import query_union
+from query_having import query_having
+from query_exists import query_exists
+from query_any_all import query_any_all
+from query_select_into import query_select_into
+from query_insert_into_select import query_insert_into_select
+from query_case import query_case
+from query_null_functions import query_null_functions
+from query_stored_procedure import query_stored_procedure
+from query_comments import query_comments
+from query_operators import query_operators
 
 # Configure logging
 logging.basicConfig(
@@ -57,6 +70,22 @@ class TestHealthcareProject(unittest.TestCase):
                 logging.info(f"Test database {self.test_db} deleted.")
             except PermissionError:
                 logging.warning(f"Could not delete {self.test_db}: File in use.")
+        # Clean up CSV outputs
+        csv_files = [
+            'group_by_results.csv', 'inner_join_results.csv', 'right_join_results.csv',
+            'full_join_results.csv', 'self_join_results.csv', 'union_results.csv',
+            'having_results.csv', 'exists_results.csv', 'any_all_results.csv',
+            'select_into_results.csv', 'insert_into_select_results.csv', 'case_results.csv',
+            'null_functions_results.csv', 'stored_procedure_results.csv', 'comments_results.csv',
+            'operators_results.csv', 'empty_test.csv'
+        ]
+        for csv in csv_files:
+            if os.path.exists(csv):
+                try:
+                    os.remove(csv)
+                    logging.info(f"Deleted {csv}")
+                except PermissionError:
+                    logging.warning(f"Could not delete {csv}: File in use.")
         logging.info("Test teardown completed.")
 
     def test_etl_pipeline(self):
@@ -125,18 +154,221 @@ class TestHealthcareProject(unittest.TestCase):
             logging.error(f"INNER JOIN test failed: {e}")
             raise
 
-    def test_left_join_query(self):
-        """Test the LEFT JOIN query script."""
+    def test_right_join_query(self):
+        """Test the RIGHT JOIN query script."""
         try:
             self.etl.run()
             setup_doctors_table(db_name=self.test_db)
-            df = query_left_join(db_name=self.test_db)
-            self.assertEqual(len(df), 4, "Expected 4 rows in LEFT JOIN results")
-            self.assertIn('Cardiology', df['specialty'].values, "Expected specialty not found")
-            self.assertTrue(os.path.exists('left_join_results.csv'), "LEFT JOIN CSV output not found")
-            logging.info("LEFT JOIN query test passed.")
+            df = query_right_join(db_name=self.test_db)
+            self.assertEqual(len(df), 5, "Expected 5 rows in RIGHT JOIN results")
+            self.assertIn('Pediatrics', df['specialty'].values, "Expected specialty not found")
+            self.assertTrue(df[df['doctor_name'] == 'Dr. Sarah Davis']['patient_count'].iloc[0] == 0, "Expected 0 patients for Dr. Sarah Davis")
+            self.assertTrue(os.path.exists('right_join_results.csv'), "RIGHT JOIN CSV output not found")
+            logging.info("RIGHT JOIN query test passed.")
         except Exception as e:
-            logging.error(f"LEFT JOIN test failed: {e}")
+            logging.error(f"RIGHT JOIN test failed: {e}")
+            raise
+
+    def test_full_join_query(self):
+        """Test the FULL JOIN query script."""
+        try:
+            self.etl.run()
+            setup_doctors_table(db_name=self.test_db)
+            df = query_full_join(db_name=self.test_db)
+            self.assertEqual(len(df), 5, "Expected 5 rows in FULL JOIN results")
+            self.assertIn('Pediatrics', df['specialty'].values, "Expected specialty not found")
+            self.assertTrue(df[df['doctor_name'] == 'Dr. Sarah Davis']['record_id'].isna().iloc[0], "Expected no patient data for Dr. Sarah Davis")
+            self.assertTrue(os.path.exists('full_join_results.csv'), "FULL JOIN CSV output not found")
+            logging.info("FULL JOIN query test passed.")
+        except Exception as e:
+            logging.error(f"FULL JOIN test failed: {e}")
+            raise
+
+    def test_self_join_query(self):
+        """Test the SELF JOIN query script."""
+        try:
+            self.etl.run()
+            setup_doctors_table(db_name=self.test_db)
+            df = query_self_join(db_name=self.test_db)
+            self.assertEqual(len(df), 1, "Expected 1 row in SELF JOIN results")
+            self.assertEqual(df['medical_condition'].iloc[0], 'Diabetes', "Expected Diabetes in SELF JOIN")
+            self.assertTrue(set(df[['patient1', 'patient2']].values.flatten()).issubset({'John Doe', 'Alice Brown'}), "Expected John Doe and Alice Brown")
+            self.assertTrue(os.path.exists('self_join_results.csv'), "SELF JOIN CSV output not found")
+            logging.info("SELF JOIN query test passed.")
+        except Exception as e:
+            logging.error(f"SELF JOIN test failed: {e}")
+            raise
+
+    def test_union_query(self):
+        """Test the UNION query script."""
+        try:
+            self.etl.run()
+            setup_doctors_table(db_name=self.test_db)
+            df = query_union(db_name=self.test_db)
+            self.assertEqual(len(df), 9, "Expected 9 rows in UNION results")
+            self.assertTrue(set(df['role']).issubset({'Patient', 'Doctor'}), "Expected Patient and Doctor roles")
+            self.assertIn('John Doe', df['person_name'].values, "Expected patient name not found")
+            self.assertIn('Dr. Sarah Davis', df['person_name'].values, "Expected doctor name not found")
+            self.assertTrue(os.path.exists('union_results.csv'), "UNION CSV output not found")
+            logging.info("UNION query test passed.")
+        except Exception as e:
+            logging.error(f"UNION test failed: {e}")
+            raise
+
+    def test_having_query(self):
+        """Test the HAVING query script."""
+        try:
+            self.etl.run()
+            setup_doctors_table(db_name=self.test_db)
+            df = query_having(db_name=self.test_db)
+            self.assertEqual(len(df), 1, "Expected 1 row in HAVING results")
+            self.assertEqual(df['medical_condition'].iloc[0], 'Diabetes', "Expected Diabetes in HAVING")
+            self.assertGreater(df['average_billing'].iloc[0], 20000, "Expected average billing > 20000")
+            self.assertTrue(os.path.exists('having_results.csv'), "HAVING CSV output not found")
+            logging.info("HAVING query test passed.")
+        except Exception as e:
+            logging.error(f"HAVING test failed: {e}")
+            raise
+
+    def test_exists_query(self):
+        """Test the EXISTS query script."""
+        try:
+            self.etl.run()
+            setup_doctors_table(db_name=self.test_db)
+            df = query_exists(db_name=self.test_db)
+            self.assertEqual(len(df), 4, "Expected 4 rows in EXISTS results")
+            self.assertNotIn('Dr. Sarah Davis', df['doctor_name'].values, "Dr. Sarah Davis should not appear")
+            self.assertIn('Cardiology', df['specialty'].values, "Expected specialty not found")
+            self.assertTrue(os.path.exists('exists_results.csv'), "EXISTS CSV output not found")
+            logging.info("EXISTS query test passed.")
+        except Exception as e:
+            logging.error(f"EXISTS test failed: {e}")
+            raise
+
+    def test_any_all_query(self):
+        """Test the ANY query script."""
+        try:
+            self.etl.run()
+            setup_doctors_table(db_name=self.test_db)
+            df = query_any_all(db_name=self.test_db)
+            self.assertEqual(len(df), 3, "Expected 3 rows in ANY results")
+            self.assertTrue(all(df['billing_amount'] > 15000.20), "Expected all billing amounts > Arthritis billing")
+            self.assertIn('Diabetes', df['medical_condition'].values, "Expected condition not found")
+            self.assertTrue(os.path.exists('any_all_results.csv'), "ANY CSV output not found")
+            logging.info("ANY query test passed.")
+        except Exception as e:
+            logging.error(f"ANY test failed: {e}")
+            raise
+
+    def test_select_into_query(self):
+        """Test the SELECT INTO query script."""
+        try:
+            self.etl.run()
+            setup_doctors_table(db_name=self.test_db)
+            df = query_select_into(db_name=self.test_db)
+            self.assertEqual(len(df), 2, "Expected 2 rows in SELECT INTO results")
+            self.assertTrue(all(df['billing_amount'] > 20000), "Expected all billing amounts > 20000")
+            self.assertIn('Diabetes', df['medical_condition'].values, "Expected condition not found")
+            self.assertTrue(os.path.exists('select_into_results.csv'), "SELECT INTO CSV output not found")
+            with sqlite3.connect(self.test_db) as conn:
+                table_exists = pd.read_sql_query("SELECT name FROM sqlite_master WHERE type='table' AND name='high_billing_patients'", conn)
+                self.assertFalse(table_exists.empty, "high_billing_patients table not created")
+            logging.info("SELECT INTO query test passed.")
+        except Exception as e:
+            logging.error(f"SELECT INTO test failed: {e}")
+            raise
+
+    def test_insert_into_select_query(self):
+        """Test the INSERT INTO SELECT query script."""
+        try:
+            self.etl.run()
+            setup_doctors_table(db_name=self.test_db)
+            df = query_insert_into_select(db_name=self.test_db)
+            self.assertEqual(len(df), 2, "Expected 2 rows in INSERT INTO SELECT results")
+            self.assertTrue(all(df['billing_amount'] > 20000), "Expected all billing amounts > 20000")
+            self.assertIn('Diabetes', df['medical_condition'].values, "Expected condition not found")
+            self.assertTrue(os.path.exists('insert_into_select_results.csv'), "INSERT INTO SELECT CSV output not found")
+            with sqlite3.connect(self.test_db) as conn:
+                table_exists = pd.read_sql_query("SELECT name FROM sqlite_master WHERE type='table' AND name='premium_patients'", conn)
+                self.assertFalse(table_exists.empty, "premium_patients table not created")
+            logging.info("INSERT INTO SELECT query test passed.")
+        except Exception as e:
+            logging.error(f"INSERT INTO SELECT test failed: {e}")
+            raise
+
+    def test_case_query(self):
+        """Test the CASE query script."""
+        try:
+            self.etl.run()
+            setup_doctors_table(db_name=self.test_db)
+            df = query_case(db_name=self.test_db)
+            self.assertEqual(len(df), 4, "Expected 4 rows in CASE results")
+            self.assertEqual(df[df['billing_amount'] > 25000]['billing_category'].iloc[0], 'High', "Expected High category")
+            self.assertEqual(df[df['billing_amount'] <= 15000.20]['billing_category'].iloc[0], 'Low', "Expected Low category")
+            self.assertTrue(os.path.exists('case_results.csv'), "CASE CSV output not found")
+            logging.info("CASE query test passed.")
+        except Exception as e:
+            logging.error(f"CASE test failed: {e}")
+            raise
+
+    def test_null_functions_query(self):
+        """Test the NULL FUNCTIONS query script."""
+        try:
+            self.etl.run()
+            setup_doctors_table(db_name=self.test_db)
+            df = query_null_functions(db_name=self.test_db)
+            self.assertEqual(len(df), 4, "Expected 4 rows in NULL FUNCTIONS results")
+            self.assertTrue(all(df['medical_condition'] != None), "Expected no null medical conditions")
+            self.assertIn('Diabetes', df['medical_condition'].values, "Expected condition not found")
+            self.assertTrue(os.path.exists('null_functions_results.csv'), "NULL FUNCTIONS CSV output not found")
+            logging.info("NULL FUNCTIONS query test passed.")
+        except Exception as e:
+            logging.error(f"NULL FUNCTIONS test failed: {e}")
+            raise
+
+    def test_stored_procedure_query(self):
+        """Test the STORED PROCEDURE query script."""
+        try:
+            self.etl.run()
+            setup_doctors_table(db_name=self.test_db)
+            df = query_stored_procedure(db_name=self.test_db)
+            self.assertEqual(len(df), 2, "Expected 2 rows in STORED PROCEDURE results")
+            self.assertTrue(all(df['medical_condition'] == 'Diabetes'), "Expected all Diabetes conditions")
+            self.assertIn('John Doe', df['name'].values, "Expected patient name not found")
+            self.assertTrue(os.path.exists('stored_procedure_results.csv'), "STORED PROCEDURE CSV output not found")
+            logging.info("STORED PROCEDURE query test passed.")
+        except Exception as e:
+            logging.error(f"STORED PROCEDURE test failed: {e}")
+            raise
+
+    def test_comments_query(self):
+        """Test the COMMENTS query script."""
+        try:
+            self.etl.run()
+            setup_doctors_table(db_name=self.test_db)
+            df = query_comments(db_name=self.test_db)
+            self.assertEqual(len(df), 2, "Expected 2 rows in COMMENTS results")
+            self.assertTrue(all(df['billing_amount'] > 20000), "Expected all billing amounts > 20000")
+            self.assertIn('Diabetes', df['medical_condition'].values, "Expected condition not found")
+            self.assertTrue(os.path.exists('comments_results.csv'), "COMMENTS CSV output not found")
+            logging.info("COMMENTS query test passed.")
+        except Exception as e:
+            logging.error(f"COMMENTS test failed: {e}")
+            raise
+
+    def test_operators_query(self):
+        """Test the OPERATORS query script."""
+        try:
+            self.etl.run()
+            setup_doctors_table(db_name=self.test_db)
+            df = query_operators(db_name=self.test_db)
+            self.assertEqual(len(df), 1, "Expected 1 row in OPERATORS results")
+            self.assertEqual(df['name'].iloc[0], 'Jane Smith', "Expected Jane Smith")
+            self.assertEqual(df['medical_condition'].iloc[0], 'Hypertension', "Expected Hypertension")
+            self.assertTrue(os.path.exists('operators_results.csv'), "OPERATORS CSV output not found")
+            logging.info("OPERATORS query test passed.")
+        except Exception as e:
+            logging.error(f"OPERATORS test failed: {e}")
             raise
 
     def test_doctors_table_setup(self):

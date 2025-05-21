@@ -49,3 +49,13 @@
 2025-05-21 13:32:42,881 - INFO - INNER JOIN query executed successfully.
 2025-05-21 13:32:42,885 - INFO - Results saved to inner_join_results.csv
 2025-05-21 13:32:42,886 - INFO - Script completed successfully.
+2025-05-21 13:58:16,228 - INFO - Connected to database successfully.
+2025-05-21 13:58:16,233 - INFO - Inspected healthcare and doctors tables.
+2025-05-21 13:58:16,234 - INFO - INNER JOIN query executed successfully.
+2025-05-21 13:58:16,238 - INFO - Results saved to inner_join_results.csv
+2025-05-21 13:58:16,238 - INFO - Script completed successfully.
+2025-05-21 14:02:09,099 - INFO - Connected to database successfully.
+2025-05-21 14:02:09,104 - INFO - Inspected healthcare and doctors tables.
+2025-05-21 14:02:09,105 - INFO - INNER JOIN query executed successfully.
+2025-05-21 14:02:09,113 - INFO - Results saved to inner_join_results.csv
+2025-05-21 14:02:09,113 - INFO - Script completed successfully.

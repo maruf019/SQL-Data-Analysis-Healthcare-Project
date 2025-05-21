@@ -35,3 +35,13 @@
 2025-05-21 13:32:42,127 - INFO - LEFT JOIN query executed successfully.
 2025-05-21 13:32:42,136 - INFO - Results saved to left_join_results.csv
 2025-05-21 13:32:42,137 - INFO - Script completed successfully.
+2025-05-21 13:58:15,469 - INFO - Connected to database successfully.
+2025-05-21 13:58:15,475 - INFO - Inspected healthcare and doctors tables.
+2025-05-21 13:58:15,476 - INFO - LEFT JOIN query executed successfully.
+2025-05-21 13:58:15,480 - INFO - Results saved to left_join_results.csv
+2025-05-21 13:58:15,481 - INFO - Script completed successfully.
+2025-05-21 14:03:12,574 - INFO - Connected to database successfully.
+2025-05-21 14:03:12,580 - INFO - Inspected healthcare and doctors tables.
+2025-05-21 14:03:12,581 - INFO - LEFT JOIN query executed successfully.
+2025-05-21 14:03:12,586 - INFO - Results saved to left_join_results.csv
+2025-05-21 14:03:12,586 - INFO - Script completed successfully.

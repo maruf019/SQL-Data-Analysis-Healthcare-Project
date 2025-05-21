@@ -31,7 +31,7 @@ def query_group_by(db_name='healthcare.db'):
             df = pd.read_sql_query(query, conn)
             logging.info("GROUP BY query executed successfully.")
 
-            print("\nAverage Billing Amount by Medical Condition:")
+            print("\nAverage Billing Amount by Medical Condition (GROUP BY):")
             print(df.to_string(index=False))
 
             output_csv = 'group_by_results.csv'

@@ -3,6 +3,7 @@ import pandas as pd
 import logging
 import os
 
+# Configure logging
 logging.basicConfig(
     filename='query_union.log',
     level=logging.INFO,
@@ -10,28 +11,29 @@ logging.basicConfig(
 )
 
 def query_union(db_name='healthcare.db'):
+    """Execute UNION query to combine names from healthcare and doctors tables."""
     try:
         if not os.path.exists(db_name):
             logging.error(f"Database file not found: {db_name}")
             raise FileNotFoundError(f"Database file not found: {db_name}")
 
         with sqlite3.connect(db_name) as conn:
-            logging.info("Connected to database.")
-            print("Connected to database.")
+            logging.info("Connected to database successfully.")
+            print("Connected to database successfully.")
 
             query = """
-            SELECT medical_condition AS category, 'Condition' AS type
+            SELECT name AS person_name, 'Patient' AS role
             FROM healthcare
             UNION
-            SELECT specialty AS category, 'Specialty' AS type
+            SELECT doctor_name, 'Doctor' AS role
             FROM doctors
-            ORDER BY category;
+            ORDER BY person_name;
             """
 
             df = pd.read_sql_query(query, conn)
-            logging.info("UNION query executed.")
+            logging.info("UNION query executed successfully.")
 
-            print("\nCombined Medical Conditions and Specialties (UNION):")
+            print("\nCombined Names of Patients and Doctors (UNION):")
             print(df.to_string(index=False))
 
             output_csv = 'union_results.csv'
