@@ -16,3 +16,22 @@
 2025-05-19 22:41:11,452 - ERROR - Database file not found: healthcare.db
 2025-05-19 22:41:11,452 - ERROR - Error: Database file not found: healthcare.db
 2025-05-19 22:41:11,452 - ERROR - Script failed: Database file not found: healthcare.db
+2025-05-21 13:06:47,633 - ERROR - Database file not found: healthcare.db
+2025-05-21 13:06:47,634 - ERROR - Error: Database file not found: healthcare.db
+2025-05-21 13:06:47,634 - ERROR - Script failed: Database file not found: healthcare.db
+2025-05-21 13:14:27,267 - INFO - Connected to database successfully.
+2025-05-21 13:14:27,269 - ERROR - Error: Execution failed on sql 'SELECT doctor_name FROM doctors': no such table: doctors
+2025-05-21 13:14:27,269 - ERROR - Script failed: Execution failed on sql 'SELECT doctor_name FROM doctors': no such table: doctors
+2025-05-21 13:16:01,913 - INFO - Connected to database successfully.
+2025-05-21 13:16:01,915 - ERROR - Error: Execution failed on sql 'SELECT doctor_name FROM doctors': no such table: doctors
+2025-05-21 13:16:01,915 - ERROR - Script failed: Execution failed on sql 'SELECT doctor_name FROM doctors': no such table: doctors
+2025-05-21 13:16:49,462 - INFO - Connected to database successfully.
+2025-05-21 13:16:49,468 - INFO - Inspected healthcare and doctors tables.
+2025-05-21 13:16:49,469 - INFO - LEFT JOIN query executed successfully.
+2025-05-21 13:16:49,476 - INFO - Results saved to left_join_results.csv
+2025-05-21 13:16:49,477 - INFO - Script completed successfully.
+2025-05-21 13:32:42,099 - INFO - Connected to database successfully.
+2025-05-21 13:32:42,126 - INFO - Inspected healthcare and doctors tables.
+2025-05-21 13:32:42,127 - INFO - LEFT JOIN query executed successfully.
+2025-05-21 13:32:42,136 - INFO - Results saved to left_join_results.csv
+2025-05-21 13:32:42,137 - INFO - Script completed successfully.

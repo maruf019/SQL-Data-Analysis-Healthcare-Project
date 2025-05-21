@@ -1,0 +1,4 @@
+2025-05-21 13:13:03,269 - INFO - Connected to database.
+2025-05-21 13:13:03,277 - INFO - FULL JOIN query executed.
+2025-05-21 13:13:03,295 - INFO - Results saved to full_join_results.csv
+2025-05-21 13:13:03,295 - INFO - Script completed successfully.

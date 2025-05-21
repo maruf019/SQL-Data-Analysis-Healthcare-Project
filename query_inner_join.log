@@ -28,3 +28,24 @@
 2025-05-19 21:58:46,754 - INFO - INNER JOIN query executed successfully.
 2025-05-19 21:58:46,765 - INFO - Results saved to inner_join_results.csv
 2025-05-19 21:58:46,766 - INFO - Script completed successfully.
+2025-05-21 13:08:03,068 - INFO - Connected to database successfully.
+2025-05-21 13:08:03,075 - INFO - Inspected healthcare and doctors tables.
+2025-05-21 13:08:03,078 - INFO - INNER JOIN query executed successfully.
+2025-05-21 13:08:03,085 - INFO - Results saved to inner_join_results.csv
+2025-05-21 13:08:03,090 - INFO - Script completed successfully.
+2025-05-21 13:08:32,903 - INFO - Connected to database successfully.
+2025-05-21 13:08:32,920 - INFO - Inspected healthcare and doctors tables.
+2025-05-21 13:08:32,922 - INFO - INNER JOIN query executed successfully.
+2025-05-21 13:08:32,927 - INFO - Results saved to inner_join_results.csv
+2025-05-21 13:08:32,930 - INFO - Script completed successfully.
+2025-05-21 13:14:52,220 - ERROR - Database file not found: healthcare.db
+2025-05-21 13:14:52,220 - ERROR - Error: Database file not found: healthcare.db
+2025-05-21 13:14:52,220 - ERROR - Script failed: Database file not found: healthcare.db
+2025-05-21 13:16:13,359 - INFO - Connected to database successfully.
+2025-05-21 13:16:13,360 - ERROR - Error: Execution failed on sql 'SELECT doctor_name FROM doctors': no such table: doctors
+2025-05-21 13:16:13,361 - ERROR - Script failed: Execution failed on sql 'SELECT doctor_name FROM doctors': no such table: doctors
+2025-05-21 13:32:42,871 - INFO - Connected to database successfully.
+2025-05-21 13:32:42,880 - INFO - Inspected healthcare and doctors tables.
+2025-05-21 13:32:42,881 - INFO - INNER JOIN query executed successfully.
+2025-05-21 13:32:42,885 - INFO - Results saved to inner_join_results.csv
+2025-05-21 13:32:42,886 - INFO - Script completed successfully.

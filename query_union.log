@@ -1,0 +1,8 @@
+2025-05-21 13:12:07,417 - INFO - Connected to database.
+2025-05-21 13:12:07,420 - INFO - UNION query executed.
+2025-05-21 13:12:07,436 - INFO - Results saved to union_results.csv
+2025-05-21 13:12:07,437 - INFO - Script completed successfully.
+2025-05-21 13:32:51,025 - INFO - Connected to database.
+2025-05-21 13:32:51,027 - INFO - UNION query executed.
+2025-05-21 13:32:51,034 - INFO - Results saved to union_results.csv
+2025-05-21 13:32:51,035 - INFO - Script completed successfully.

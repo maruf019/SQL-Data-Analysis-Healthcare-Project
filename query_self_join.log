@@ -1,0 +1,8 @@
+2025-05-21 13:12:37,241 - INFO - Connected to database.
+2025-05-21 13:12:37,243 - INFO - SELF JOIN query executed.
+2025-05-21 13:12:37,252 - INFO - Results saved to self_join_results.csv
+2025-05-21 13:12:37,252 - INFO - Script completed successfully.
+2025-05-21 13:32:44,245 - INFO - Connected to database.
+2025-05-21 13:32:44,247 - INFO - SELF JOIN query executed.
+2025-05-21 13:32:44,254 - INFO - Results saved to self_join_results.csv
+2025-05-21 13:32:44,255 - INFO - Script completed successfully.

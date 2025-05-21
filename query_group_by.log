@@ -20,3 +20,15 @@
 2025-05-19 21:58:40,984 - INFO - GROUP BY query executed successfully.
 2025-05-19 21:58:40,991 - INFO - Results saved to group_by_results.csv
 2025-05-19 21:58:40,992 - INFO - Script completed successfully.
+2025-05-21 13:07:57,853 - INFO - Connected to database successfully.
+2025-05-21 13:07:57,855 - INFO - GROUP BY query executed successfully.
+2025-05-21 13:07:57,865 - INFO - Results saved to group_by_results.csv
+2025-05-21 13:07:57,866 - INFO - Script completed successfully.
+2025-05-21 13:08:28,723 - INFO - Connected to database successfully.
+2025-05-21 13:08:28,725 - INFO - GROUP BY query executed successfully.
+2025-05-21 13:08:28,742 - INFO - Results saved to group_by_results.csv
+2025-05-21 13:08:28,743 - INFO - Script completed successfully.
+2025-05-21 13:32:43,587 - INFO - Connected to database successfully.
+2025-05-21 13:32:43,591 - INFO - GROUP BY query executed successfully.
+2025-05-21 13:32:43,600 - INFO - Results saved to group_by_results.csv
+2025-05-21 13:32:43,601 - INFO - Script completed successfully.
